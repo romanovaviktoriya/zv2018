@@ -1,0 +1,1649 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Заявки</title>
+
+    <!-- favicon
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1f2740">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1f2740">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#1f2740">-->
+
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="c-sidebar zv-flex-col justify-side-by-side">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <div class="c-sidebar__header">
+                    <div class="c-logo">
+                        <a href="/" class="c-logo__brand"><span class="blue-text">Zerno</span>vozam</a>
+                        <span class="c-logo__text">Сервис №1 в России для заказчиков и перевозчиков зерна</span>
+                    </div>
+
+                    <a href="#createOrderInfo" class="c-login" data-toggle="modal">Войти</a>
+
+                    <div class="c-user c-hidden"><!-- user-block -->
+                        <div class="c-user__header collapsed" data-toggle="collapse" data-target="#toggleUserInfo"><!--accordion_header-->
+                            <div class="title">Иванов Сергей</div>
+                        </div>
+                        <div id="toggleUserInfo" class="c-user__body collapse">
+                            <a href="">Что-то</a>
+                            <a href="">Еще немного</a>
+                            <a href="">И еще</a>
+                        </div>
+                        <a href="" class="c-user__rating c-rating" data-rating="3"><!-- rating_user -->
+                            <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                            <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                            <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                            <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                            <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                        </a>
+                    </div>
+                    <ul class="c-main-menu"><!--nav nav-sidebar-->
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="index.html" class="c-main-menu__main zv-flex-row nowrap"><span class="zv-icon-menu-home"></span>Главная</a>
+                        </li>
+                        <li class="c-main-menu__item c-main-menu__item--active zv-flex-row align-side-by-side">
+                            <a href="/" class="c-main-menu__orders zv-flex-row nowrap"><span class="zv-icon-menu-orders"></span>Заявки</a>
+                            <a href="add_order.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="grain_trucks.html" class="c-main-menu__trucks zv-flex-row nowrap"><span class="zv-icon-menu-trucks"></span>Зерновозы</a>
+                            <a href="/" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="timeslots.html" class="c-main-menu__timeslots zv-flex-row nowrap"><span class="zv-icon-menu-timeslots"></span>Таймслоты</a>
+                            <a href="add_timeslot.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__services zv-flex-row nowrap"><span class="zv-icon-menu-serves"></span>Сервисы</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-forum"></span> Форум</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="search_truck.html" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-search"></span> Поиск АТП и Авто</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="c-sidebar__footer">
+                    <div class="c-sidebar__support">
+                        <h5 class="technical_support_title">Техподдержка</h5>
+                        <a href="tel:+79628604827" class="technical_support_phone">+7 (962) 860-48-27</a>
+                    </div>
+                    <ul class="c-bottom-nav zv-flex-row">
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Тарифы</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Оферта</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Контакты</a></li>
+                    </ul>
+                    <div class="c-copyright"><a href="" class="c-paragraph">ООО "Шипго" © 2014-2017</a></div>
+                </div>
+            </div>
+            <div class="col-sm-12 main">
+                <section class="c-control-block">
+                    <div class="c-control-block__title zv-flex-row align-side-by-side">
+                        <a href="" class="c-button c-button--blue c-button--add">Подать Заявку на Перевозку</a>
+                        <h2 class="c-text--h c-text--size-s48-h48">Заявки</h2>
+                    </div>
+                    <ul class="c-control-block__nav-tabs c-nav-tabs--section nav nav-tabs" id="tabs_orders">
+                        <li class="active"><a data-toggle="tab" href="#panel1">Поиск заявок</a></li>
+                        <li><a data-toggle="tab" href="#panel2">Ваши заявки</a></li>
+                    </ul>
+                    <div class="c-control-block__content tab-content">
+                        <div id="panel1" class="tab-pane fade in active">
+                            <div class="search_orders">
+                                <form action="" class="c-form" method="post" id="search_orders_form" class="validate" autocomplete="" enctype="multipart/form-data">
+                                    <div class="zv-flex-col">
+                                        <div class="flex_row group_input">
+                                            <div class="form-group load">
+                                                <label for="place_load">Погрузка</label>
+                                                <input type="text" class="form-control" id="place_load" name="place_load" placeholder="" required>
+                                                <div class="c-quick-links zv-flex-row vertical-align c-hidden">
+                                                    <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Астрахань</span></a>
+                                                    <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Новороссийск</span></a>
+                                                    <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Тамань</span></a>
+                                                </div>
+                                                <div class="slider-wrapper">
+                                                    <span class="text">
+                                                        <span class="slider-val" id="slider-snap-value-lower"></span>
+                                                        Радиус +<span class="slider-val" id="slider-snap-value-upper"></span> км
+                                                    </span>
+
+                                                    <div class="slider" id="slider-snap"></div>
+                                                    <input type="hidden" class="slider-val" id="hidden-slider-snap-value-lower" value="0">
+                                                    <input type="hidden" class="slider-val" id="hidden-slider-snap-value-upper" value="40">
+                                                    <!--<input type="text" class="js-check-change" />-->
+                                                    <!--<label class="display-box-label">Value:</label>-->
+                                                    <!--<div id="js-display-change" class="display-box"></div>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group upload">
+                                                <label for="place_upload">Выгрузка</label>
+                                                <input type="text" class="form-control" id="place_upload" name="place_upload" placeholder="" required>
+                                                <div class="c-quick-links zv-flex-row vertical-align c-hidden">
+                                                    <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">НЗТ</span></a>
+                                                    <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">КСК (41 причал)</span></a>
+                                                    <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">ЗТК Тамань</span></a>
+                                                </div>
+                                            </div>
+                                            <div class="flex_col price_distance">
+                                                <div class="flex_row">
+                                                    <div class="form-group">
+                                                        <label for="price_from">Цена, руб./кг</label>
+                                                        <div class="flex_row">
+                                                            <input type="text" class="form-control input_number" id="price_from" name="price_from" placeholder="от" required>
+                                                            <input type="text" class="form-control input_number" id="price_to" name="price_to" placeholder="до" required>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="distance_from">Расстояние, км</label>
+                                                        <div class="flex_row">
+                                                            <input type="text" class="form-control input_number" id="distance_from" name="distance_from" placeholder="от" required>
+                                                            <input type="text" class="form-control input_number" id="distance_to" name="distance_to" placeholder="до" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex_row group_check">
+                                                    <input type="checkbox" id="bargaining" name="bargaining" value="" required checked>
+                                                    <label for="bargaining">Есть торг</label>
+                                                    <input type="checkbox" id="paid_simple" name="paid_simple" value="" required checked>
+                                                    <label for="paid_simple">Оплачивается простой</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex_row group_footer">
+                                            <div class="c-accordion">
+                                                <div id="toggleAllParams" class="c-accordion__body collapse in" style="width: 100%;">
+                                                    <div class="flex_row">
+                                                        <div class="form-group w50">
+                                                            <span class="control-label">Культура</span>
+                                                            <div class="wrap_select major w100">
+                                                                <select name="culture" id="culture" class="form-control culture select-custom w100" required>
+                                                                    <option value=""></option>
+                                                                    <option  class="down" value="1">Любая</option>
+                                                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                                                    <option class="down" value="5">горох</option>
+                                                                    <option class="up" value="6">свекла</option>
+                                                                    <option class="down" value="7">овес</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group w50">
+                                                            <span class="control-label">Вариант погрузки</span>
+                                                            <div class="wrap_select major w100">
+                                                                <select name="loading_option" id="loading_option" class="form-control loading_option select-custom w100" required>
+                                                                    <option value=""></option>
+                                                                    <option  class="" value="1">Вертикальный</option>
+                                                                    <option class="" value="2">Маниту</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group w100">
+                                                            <span class="control-label">Экспортёр</span>
+                                                            <div class="wrap_select major w100">
+                                                                <select name="exporter" id="exporter" class="form-control exporter select-custom w100" required>
+                                                                    <option value=""></option>
+                                                                    <option  class="" value="1">Любой</option>
+                                                                    <option class="" value="2">Каргилл, ООО</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group start_loading w50">
+                                                            <label for="start_loading">Начало погрузки</label>
+                                                            <input type="text" class="form-control w100" id="start_loading" name="start_loading" value="" placeholder="Любая дата" required>
+                                                        </div>
+                                                        <div class="form-group carrying_scales w50">
+                                                            <label for="carrying_scales">Грузоподъёмность весов</label>
+                                                            <input type="text" class="form-control w100" id="carrying_scales" name="carrying_scales" value="" placeholder="От" required>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--<div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleAllParams"><span class="title"><span class="title_hide">Скрыть параметры</span>Все параметры</span></div>-->
+                                            </div>
+                                            <div class="flex_row">
+                                                <div class="flex_row">
+                                                    <a href="" class="clear_all">Сбросить все</a>
+                                                    <a href="" class="save_filter">Сохранить фильтр</a>
+                                                </div>
+                                                <button type="submit" id="" class="c-button c-button--blue c-button--shadow zv-flex-row vertical-align" value="">
+                                                    <span class="zv-icon-search"></span>Найти заявки
+                                                </button>
+                                            </div>
+                                            <div class="c-accordion__header accordion_header" data-toggle="collapse" data-target="#toggleAllParams">
+                                                <span class="c-accordion__title title">
+                                                    <span class="c-accordion__title--hide title_hide">Скрыть параметры</span>
+                                                    Все параметры
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="flex_col orders">
+                                <div class="orders_header">
+                                    <div class="flex_row zv-flex-row vertical-align nowrap">
+                                        <h3 class="c-caption__h3">433 актуальных заявки</h3>
+                                        <div class="sorting_actual_orders">
+                                            <form action="" method="post" id="sorting_actual_orders_form" class="form-horizontal" autocomplete="" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <span class="control-label">упорядочить по</span>
+                                                    <div class="wrap_select major">
+                                                        <!--<label for="sorting_by"></label>-->
+                                                        <select name="sorting_by" id="sorting_by" class="form-control sorting_by select-custom" required>
+                                                            <option value=""></option>
+                                                            <option  class="down" value="1">дате добавления</option>
+                                                            <option class="up" value="2">дате добавления</option>
+                                                            <option class="down" value="3">расстоянию</option>
+                                                            <option class="up" value="4">расстоянию</option>
+                                                            <option class="down" value="5">цене за 1км</option>
+                                                            <option class="up" value="6">цене за 1км</option>
+                                                            <option class="down" value="7">месту выгрузке</option>
+                                                            <option class="up" value="8">месту выгрузке</option>
+                                                            <option class="down" value="9">объему</option>
+                                                            <option class="up" value="10">объему</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orders_table">
+                                    <ul class="c-nav-tabs--view nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#orders_list" class="tab_list">Список</a></li>
+                                        <li><a data-toggle="tab" href="#orders_map" class="tab_map">Карта</a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <!-- Actual orders (list-table)-->
+                                        <div id="orders_list" class="tab-pane fade in active">
+                                            <div class="table_actual_orders">
+                                                <div class="table_thead flex_row">
+                                                    <div class="th">Расстояние</div>
+                                                    <div class="th">Погрузка</div>
+                                                    <div class="th">Выгрузка</div>
+                                                    <div class="th">Вес, культура</div>
+                                                    <div class="th">Цена</div>
+                                                    <div class="th">Состояние</div>
+                                                    <div class="th">Действие</div>
+                                                </div>
+                                                <div class="table_body flex_col">
+                                                    <div class="table_row flex_row">
+                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                        <div class="_1">
+                                                            <span class="distance">336 км</span>
+                                                            <span class="date">17:54, 01.12.17</span>
+                                                        </div>
+                                                        <div class="_2">
+                                                            <span class="locality">Чамлыкская ст-ца</span>
+                                                            <span class="region">Лабинский район, Краснодарский край</span>
+                                                            <span class="trader">Артис агро Экспорт, ООО</span>
+                                                        </div>
+                                                        <div class="_3">
+                                                            <span class="stevedore">КСК (41 причал)</span>
+                                                            <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                            <span class="warning">Лимит</span>
+                                                        </div>
+                                                        <div class="_4">
+                                                            <span class="weight"><b>2000</b> т</span>
+                                                            <span class="culture">Кукуруза</span>
+                                                        </div>
+                                                        <div class="_5">
+                                                            <span class="price"><b>1,25</b> руб./км</span>
+                                                            <span class="bargain">без торга,</span>
+                                                            <span class="organization">ИП</span>
+                                                        </div>
+                                                        <div class="_6">
+                                                            <!--<a href="" class="rating" data-rating="4">
+                                                                <img alt="1" src="img/star_Y.svg" title="">
+                                                                <img alt="2" src="img/star_Y.svg" title="">
+                                                                <img alt="3" src="img/star_Y.svg" title="">
+                                                                <img alt="4" src="img/star_Y.svg" title="">
+                                                                <img alt="5" src="img/star_G.svg" title="">
+                                                            </a>
+                                                            <a href="" class="company">ТЭК Гринслав</a>-->
+                                                            <date datetime="" class="c-caption__h5 c-caption--bold">28.05</date>
+                                                            <div class="c-caption__h5">
+                                                                30 из 30 авто
+                                                            </div>
+                                                            <div class="c-alert">
+                                                                Требует подтверждения
+                                                            </div>
+                                                        </div>
+                                                        <div class="_7">
+                                                            <!--<a href="" class="show_contacts">Показать контакты</a>-->
+                                                            <a href="" class="show_contacts c-caption--link">Дни погрузки</a>
+                                                            <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore1_1">Подробнее</div>
+                                                        </div>
+                                                    </div>
+                                                        <div class="accordion">
+                                                            <div id="toggleMore1_1" class="collapse table_actual_orders_more">
+                                                                <div class="zv-flex-row nowrap align-start align-side-by-side">
+                                                                    <div class="c-bar">
+                                                                        <div class="c-bar__table">
+                                                                            <div class="c-table">
+                                                                                <div class="c-table__row">
+                                                                                    <div class="c-table__cell c-paragraph--contrasting">Выбрано авто:</div>
+                                                                                    <div class="c-table__cell c-paragraph--contrasting c-paragraph--bold">15 авто</div>
+                                                                                </div>
+                                                                                <div class="c-table__row">
+                                                                                    <div class="c-table__cell c-paragraph--contrasting">Выбрано тонн:</div>
+                                                                                    <div class="c-table__cell c-paragraph--contrasting c-paragraph--bold">3500 т</div>
+                                                                                </div>
+                                                                                <div class="c-table__row">
+                                                                                    <div class="c-table__cell c-paragraph--contrasting">Цена средняя:</div>
+                                                                                    <div class="c-table__cell c-paragraph--contrasting c-paragraph--bold">1.2 руб</div>
+                                                                                </div>
+                                                                                <div class="c-table__row">
+                                                                                    <div class="c-table__cell c-paragraph--contrasting">Макс.цена:</div>
+                                                                                    <div class="c-table__cell c-paragraph--contrasting c-paragraph--bold">1.3 руб</div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <a href="" class="c-bar__btn c-button c-button--blue c-button--shadow">Подтвердить погрузку</a>
+                                                                        <div class="c-bar__message">
+                                                                            <span class="c-paragraph--small c-paragraph--lightgray">Вам необходимо подтвердить заявку до 16:00</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="zv-flex-col">
+                                                                        <div class="orders_header flex_row zv-flex-row vertical-align nowrap">
+                                                                            <h3 class="c-caption__h3">3 зерновоза</h3>
+                                                                            <div class="sorting_actual_orders">
+                                                                                <form action="" method="post" id="sorting_actual_orders_form" class="form-horizontal" autocomplete="" enctype="multipart/form-data">
+                                                                                    <div class="form-group">
+                                                                                        <span class="control-label">упорядочить по</span>
+                                                                                        <div class="wrap_select major">
+                                                                                                        <select name="sorting_by" id="sorting_by" class="form-control sorting_by select-custom" required>
+                                                                                                            <option value=""></option>
+                                                                                                            <option  class="down" value="1">дате добавления</option>
+                                                                                                            <option class="up" value="2">дате добавления</option>
+                                                                                                            <option class="down" value="3">расстоянию</option>
+                                                                                                            <option class="up" value="4">расстоянию</option>
+                                                                                                            <option class="down" value="5">цене за 1км</option>
+                                                                                                            <option class="up" value="6" selected>цене за 1км</option>
+                                                                                                            <option class="down" value="7">месту выгрузке</option>
+                                                                                                            <option class="up" value="8">месту выгрузке</option>
+                                                                                                            <option class="down" value="9">объему</option>
+                                                                                                            <option class="up" value="10">объему</option>
+                                                                                                        </select>
+                                                                                        </div>
+                                                                                        <div class="c-quick-links">
+                                                                                            <a href="" class="c-quick-links__item">По поставщику</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="table_actual_orders table_actual_orders--graintrucks grain_table">
+                                                                            <div class="table_thead flex_row">
+                                                                                <div class="th">Статус</div>
+                                                                                <div class="th">Инфо</div>
+                                                                                <div class="th">Владелец</div>
+                                                                                <div class="th">Цена</div>
+                                                                                <div class="th">Контакты</div>
+                                                                            </div>
+                                                                            <div class="table_body flex_col">
+                                                                                <div class="table_row flex_row">
+                                                                                    <div class="flex_row">
+                                                                                        <div class="_1">
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="zv-icon-free-truck"></span>
+                                                                                                <div class="group_check">
+                                                                                                    <input type="checkbox" id="check_item1" checked="">
+                                                                                                    <label for="check_item1"></label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="status">Свободен</span>
+                                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_2">
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span class="num_auto c-caption--bold">A355AA65</span>
+                                                                                                <span class="num_trailer">, AA000023</span>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span>тел.: </span>
+                                                                                                <span class="phone c-caption--bold">+79034514026</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_6">
+                                                                                            <a href="" class="c-rating" data-rating="3">
+                                                                                                <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                                                                                                <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                                                                                            </a>
+                                                                                            <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                                                        </div>
+                                                                                        <div class="_5">
+                                                                                            <span class="price"><b>1,25</b> руб./км</span>
+                                                                                            <span class="bargain">без торга,</span>
+                                                                                            <span class="organization">ИП</span>
+                                                                                        </div>
+                                                                                        <div class="_7">
+                                                                                            <a href="" class="show_contacts">Показать контакты</a>
+                                                                                            <a href="tel:+79206549300" class="contact_phone c-hidden">+7 920 654 93 00</a>
+                                                                                            <span class="c-status--check c-hidden">СТС</span>
+                                                                                            <span class="c-status--uncheck c-hidden">Договор</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="table_row flex_row">
+                                                                                    <div class="flex_row">
+                                                                                        <div class="_1">
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="zv-icon-busy-truck"></span>
+                                                                                                <div class="group_check">
+                                                                                                    <input type="checkbox" id="check_item2">
+                                                                                                    <label for="check_item2"></label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="status">Занят</span>
+                                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_2">
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span class="num_auto c-caption--bold">A355AA65</span>
+                                                                                                <span class="num_trailer">, AA000023</span>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span>тел.: </span>
+                                                                                                <span class="phone  c-caption--bold">+79034514026</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_6">
+                                                                                            <a href="" class="c-rating" data-rating="3">
+                                                                                                <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                                                                                                <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                                                                                            </a>
+                                                                                            <a href="" class="company">Николаевский Ибрагим Мухамедович</a>
+                                                                                        </div>
+                                                                                        <div class="_5">
+                                                                                            <span class="price"><b>1,25</b> руб./км</span>
+                                                                                            <span class="bargain">без торга,</span>
+                                                                                            <span class="organization">ИП</span>
+                                                                                        </div>
+                                                                                        <div class="_7">
+                                                                                            <a href="" class="show_contacts c-hidden">Показать контакты</a>
+                                                                                            <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                                            <span class="c-status--check">СТС</span>
+                                                                                            <span class="c-status--uncheck">Договор</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="table_row flex_row">
+                                                                                    <div class="flex_row">
+                                                                                        <div class="_1">
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="zv-icon-free-truck"></span>
+                                                                                                <div class="group_check">
+                                                                                                    <input type="checkbox" id="check_item3" checked="">
+                                                                                                    <label for="check_item3"></label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="status">Свободен</span>
+                                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_2">
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span class="num_auto c-caption--bold">A355AA65</span>
+                                                                                                <span class="num_trailer">, AA000023</span>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span>тел.: </span>
+                                                                                                <span class="phone c-caption--bold">+79034514026</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_6">
+                                                                                            <a href="" class="c-rating" data-rating="3">
+                                                                                                <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                                                                                                <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                                                                                            </a>
+                                                                                            <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                                                        </div>
+                                                                                        <div class="_5">
+                                                                                            <span class="price"><b>1,25</b> руб./км</span>
+                                                                                            <span class="bargain">без торга,</span>
+                                                                                            <span class="organization">ИП</span>
+                                                                                        </div>
+                                                                                        <div class="_7">
+                                                                                            <a href="" class="show_contacts c-hidden">Показать контакты</a>
+                                                                                            <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                                            <span class="c-status--uncheck">СТС</span>
+                                                                                            <span class="c-status--uncheck">Договор</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="c-hr c-hr--allowable">
+                                                                                    <span class="c-paragraph--bold c-paragraph--contrasting">1,25 р</span>
+                                                                                </div>
+                                                                                <div class="table_row flex_row">
+                                                                                    <div class="flex_row">
+                                                                                        <div class="_1">
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="zv-icon-free-truck"></span>
+                                                                                                <div class="group_check">
+                                                                                                    <input type="checkbox" id="check_item4" checked="">
+                                                                                                    <label for="check_item4"></label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="status">Свободен</span>
+                                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_2">
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span class="num_auto c-caption--bold">A355AA65</span>
+                                                                                                <span class="num_trailer">, AA000023</span>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span>тел.: </span>
+                                                                                                <span class="phone c-caption--bold">+79034514026</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_6">
+                                                                                            <a href="" class="c-rating" data-rating="3">
+                                                                                                <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                                                                                                <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                                                                                            </a>
+                                                                                            <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                                                        </div>
+                                                                                        <div class="_5">
+                                                                                            <span class="price"><b>1,10</b> руб./км</span>
+                                                                                            <span class="bargain">без торга,</span>
+                                                                                            <span class="organization">ИП</span>
+                                                                                        </div>
+                                                                                        <div class="_7">
+                                                                                            <a href="" class="show_contacts c-hidden">Показать контакты</a>
+                                                                                            <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                                            <span class="c-status--check">СТС</span>
+                                                                                            <span class="c-status--check">Договор</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="table_row flex_row">
+                                                                                    <div class="flex_row">
+                                                                                        <div class="_1">
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="zv-icon-free-truck"></span>
+                                                                                                <div class="group_check">
+                                                                                                    <input type="checkbox" id="check_item5" checked="">
+                                                                                                    <label for="check_item5"></label>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-col align-start">
+                                                                                                <span class="status">Свободен</span>
+                                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_2">
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span class="num_auto c-caption--bold">A355AA65</span>
+                                                                                                <span class="num_trailer">, AA000023</span>
+                                                                                            </div>
+                                                                                            <div class="zv-flex-row">
+                                                                                                <span>тел.: </span>
+                                                                                                <span class="phone c-caption--bold">+79034514026</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="_6">
+                                                                                            <a href="" class="c-rating" data-rating="3">
+                                                                                                <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                                                                                                <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                                                                                                <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                                                                                            </a>
+                                                                                            <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                                                        </div>
+                                                                                        <div class="_5">
+                                                                                            <span class="price"><b>1,10</b> руб./км</span>
+                                                                                            <span class="bargain">торг,</span>
+                                                                                            <span class="organization">ИП</span>
+                                                                                        </div>
+                                                                                        <div class="_7">
+                                                                                            <a href="" class="show_contacts c-hidden">Показать контакты</a>
+                                                                                            <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                                            <span class="c-status--check">СТС</span>
+                                                                                            <span class="c-status--check">Договор</span>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="c-hr c-hr--optimal">
+                                                                                    <span class="c-paragraph--bold c-paragraph--contrasting">1,10 р</span>
+                                                                                </div>
+                                                                                <img src="img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="c-hidden loader">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table_row flex_row">
+                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                            <div class="_1">
+                                                                <span class="distance">400 км</span>
+                                                                <span class="date">17:54, 01.12.17</span>
+                                                            </div>
+                                                            <div class="_2">
+                                                                <span class="locality">Первомайское с</span>
+                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                            </div>
+                                                            <div class="_3">
+                                                                <span class="stevedore">НЗТ</span>
+                                                                <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                                <span class="warning">Лимит</span>
+                                                            </div>
+                                                            <div class="_4">
+                                                                <span class="weight"><b>1900</b> т</span>
+                                                                <span class="culture">Кукуруза</span>
+                                                            </div>
+                                                            <div class="_5">
+                                                                <span class="price"><b>1,30</b> руб./км</span>
+                                                                <span class="bargain">без торга,</span>
+                                                                <span class="organization">ИП</span>
+                                                            </div>
+                                                            <div class="_6">
+                                                                <a href="" class="rating" data-rating="4">
+                                                                    <img alt="1" src="img/star_Y.svg" title="">
+                                                                    <img alt="2" src="img/star_Y.svg" title="">
+                                                                    <img alt="3" src="img/star_Y.svg" title="">
+                                                                    <img alt="4" src="img/star_Y.svg" title="">
+                                                                    <img alt="5" src="img/star_G.svg" title="">
+                                                                </a>
+                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                            </div>
+                                                            <div class="_7">
+                                                                <!--<a href="" class="show_contacts">Показать контакты</a>-->
+                                                                <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore1_2">Подробнее</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion">
+                                                            <div id="toggleMore1_2" class="collapse table_actual_orders_more">
+                                                                <div class="flex_row">
+                                                                    <div class="item_map">
+                                                                        <div id="item_map2"></div>
+                                                                        <div class="flex_col">
+                                                                            <span class="text">Узнайте, какое расстояние от вас до погрузки</span>
+                                                                            <a href="" class="find_out_distance">Узнать расстояние</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item_info">
+                                                                        <div class="head flex_row">
+                                                                            <div class="warning_message">
+                                                                                Достигнут лимит на прием автомобилей на данного экспортера данной культуры. Может быть задержка с выгрузкой
+                                                                            </div>
+                                                                            <div class="inf flex_row">
+                                                                                <span class="numeric_order">№ 109808</span>
+                                                                                <span class="view_order">601</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="body flex_row">
+                                                                            <div class="loading_method w50">
+                                                                                <span class="title">Способ погрузки</span>
+                                                                                <span class="value">Амкодор</span>
+                                                                            </div>
+                                                                            <div class="allowable_shortage w50">
+                                                                                <span class="title">Допустимая недостача</span>
+                                                                                <span class="value">0.4%</span>
+                                                                            </div>
+                                                                            <div class="loading_capacity_scales w50">
+                                                                                <span class="title">Грузподъемность весов на погрузке</span>
+                                                                                <span class="value">60 т</span>
+                                                                            </div>
+                                                                            <div class="sediment w50">
+                                                                                <span class="title">Простой</span>
+                                                                                <span class="value">после 3-х суток, 1200/сутки</span>
+                                                                            </div>
+                                                                            <div class="payment">
+                                                                                <span class="title">Опата</span>
+                                                                                <span class="value">
+                                                                                    Аванс 50% после погрузки на р/сч. Полный расчёт на р/сч. ИП после сдачи ттн в кафе
+                                                                                    Душенька в папку для Олега
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="note">
+                                                                                <span class="title">Примечание</span>
+                                                                                <span class="value">+79186700448 Лариса! ИП обязательно!</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table_row flex_row">
+                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                            <div class="_1">
+                                                                <span class="distance">336 км</span>
+                                                                <span class="date">17:54, 01.12.17</span>
+                                                            </div>
+                                                            <div class="_2">
+                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                            </div>
+                                                            <div class="_3">
+                                                                <span class="stevedore">КСК (41 причал)</span>
+                                                                <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                                <span class="warning">Лимит</span>
+                                                            </div>
+                                                            <div class="_4">
+                                                                <span class="weight"><b>2000</b> т</span>
+                                                                <span class="culture">Кукуруза</span>
+                                                            </div>
+                                                            <div class="_5">
+                                                                <span class="price"><b>1,25</b> руб./км</span>
+                                                                <span class="bargain">без торга,</span>
+                                                                <span class="organization">ИП</span>
+                                                            </div>
+                                                            <div class="_6">
+                                                                <a href="" class="rating" data-rating="4">
+                                                                    <img alt="1" src="img/star_Y.svg" title="">
+                                                                    <img alt="2" src="img/star_Y.svg" title="">
+                                                                    <img alt="3" src="img/star_Y.svg" title="">
+                                                                    <img alt="4" src="img/star_Y.svg" title="">
+                                                                    <img alt="5" src="img/star_G.svg" title="">
+                                                                </a>
+                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                            </div>
+                                                            <div class="_7">
+                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                                <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore1_3">Подробнее</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion">
+                                                            <div id="toggleMore1_3" class="collapse table_actual_orders_more">
+                                                                <div class="flex_row">
+                                                                    <div class="item_map">
+                                                                        <div id="item_map3"></div>
+                                                                        <div class="flex_col">
+                                                                            <span class="text">Узнайте, какое расстояние от вас до погрузки</span>
+                                                                            <a href="" class="find_out_distance">Узнать расстояние</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="item_info">
+                                                                        <div class="head flex_row">
+                                                                            <div class="warning_message">
+                                                                                Достигнут лимит на прием автомобилей на данного экспортера данной культуры. Может быть задержка с выгрузкой
+                                                                            </div>
+                                                                            <div class="inf flex_row">
+                                                                                <span class="numeric_order">№ 109808</span>
+                                                                                <span class="view_order">601</span>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="body flex_row">
+                                                                            <div class="loading_method w50">
+                                                                                <span class="title">Способ погрузки</span>
+                                                                                <span class="value">Амкодор</span>
+                                                                            </div>
+                                                                            <div class="allowable_shortage w50">
+                                                                                <span class="title">Допустимая недостача</span>
+                                                                                <span class="value">0.4%</span>
+                                                                            </div>
+                                                                            <div class="loading_capacity_scales w50">
+                                                                                <span class="title">Грузподъемность весов на погрузке</span>
+                                                                                <span class="value">60 т</span>
+                                                                            </div>
+                                                                            <div class="sediment w50">
+                                                                                <span class="title">Простой</span>
+                                                                                <span class="value">после 3-х суток, 1200/сутки</span>
+                                                                            </div>
+                                                                            <div class="payment">
+                                                                                <span class="title">Опата</span>
+                                                                                <span class="value">
+                                                                                    Аванс 50% после погрузки на р/сч. Полный расчёт на р/сч. ИП после сдачи ттн в кафе
+                                                                                    Душенька в папку для Олега
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="note">
+                                                                                <span class="title">Примечание</span>
+                                                                                <span class="value">+79186700448 Лариса! ИП обязательно!</span>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <img src="img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="loader">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="orders_map" class="tab-pane fade">
+                                            <div class="wrap">
+                                                <div id="map"></div>
+                                                <div id="panel_my_location">
+                                                    <p class="text">
+                                                        С картой удобнее работать, когда вы видите своё местоположение относительно заявок.
+                                                    </p>
+                                                    <a href="" id="my_location">Показать моё местоположение</a>
+                                                </div>
+                                                <div id="actual_orders">
+                                                    <div class="header">
+                                                        <h3 class="count_actual_orders">3 актуальные заявки</h3>
+                                                        <button type="button" class="close" onClick="$(this).closest('#actual_orders').hide()" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    </div>
+                                                    <div class="scrollbar-macosx" style="max-height: 100%;">
+                                                        <div class="permanent">
+                                                            <div class="table_actual_orders">
+                                                                <!--<div class="table_thead flex_row">-->
+                                                                    <!--<div class="th">Расстояние</div>-->
+                                                                    <!--<div class="th">Погрузка</div>-->
+                                                                    <!--<div class="th">Выгрузка</div>-->
+                                                                    <!--<div class="th">Вес, культура</div>-->
+                                                                    <!--<div class="th">Цена</div>-->
+                                                                    <!--<div class="th">Отправитель</div>-->
+                                                                    <!--<div class="th">Контакты</div>-->
+                                                                <!--</div>-->
+                                                                <div class="table_body flex_col">
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                                            <div class="_1">
+                                                                                <span class="distance">336 км</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                                            </div>
+                                                                            <div class="_3">
+                                                                                <span class="stevedore">КСК (41 причал)</span>
+                                                                                <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                                                <span class="warning">Лимит</span>
+                                                                            </div>
+                                                                            <div class="_4">
+                                                                                <span class="weight"><b>2000</b> т</span>
+                                                                                <span class="culture">Кукуруза</span>
+                                                                            </div>
+                                                                            <div class="_5">
+                                                                                <span class="price"><b>1,25</b> руб./км</span>
+                                                                                <span class="bargain">без торга,</span>
+                                                                                <span class="organization">ИП</span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="rating" data-rating="4">
+                                                                                    <img alt="1" src="img/star_Y.svg" title="">
+                                                                                    <img alt="2" src="img/star_Y.svg" title="">
+                                                                                    <img alt="3" src="img/star_Y.svg" title="">
+                                                                                    <img alt="4" src="img/star_Y.svg" title="">
+                                                                                    <img alt="5" src="img/star_G.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                                                <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore2_1">Подробнее</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="accordion">
+                                                                            <div id="toggleMore2_1" class="collapse table_actual_orders_more">
+                                                                                <div class="flex_row">
+                                                                                    <div class="item_map">
+                                                                                        <div id="item_map2_1"></div>
+                                                                                        <div class="flex_col">
+                                                                                            <span class="text">Узнайте, какое расстояние от вас до погрузки</span>
+                                                                                            <a href="" class="find_out_distance">Узнать расстояние</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="item_info">
+                                                                                        <div class="head flex_row">
+                                                                                            <div class="warning_message">
+                                                                                                Достигнут лимит на прием автомобилей на данного экспортера данной культуры. Может быть задержка с выгрузкой
+                                                                                            </div>
+                                                                                            <div class="inf flex_row">
+                                                                                                <span class="numeric_order">№ 109808</span>
+                                                                                                <span class="view_order">601</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="body flex_row">
+                                                                                            <div class="loading_method">
+                                                                                                <span class="title">Способ погрузки</span>
+                                                                                                <span class="value">Амкодор</span>
+                                                                                            </div>
+                                                                                            <div class="allowable_shortage">
+                                                                                                <span class="title">Допустимая недостача</span>
+                                                                                                <span class="value">0.4%</span>
+                                                                                            </div>
+                                                                                            <div class="loading_capacity_scales">
+                                                                                                <span class="title">Грузподъемность весов на погрузке</span>
+                                                                                                <span class="value">60 т</span>
+                                                                                            </div>
+                                                                                            <div class="sediment">
+                                                                                                <span class="title">Простой</span>
+                                                                                                <span class="value">после 3-х суток, 1200/сутки</span>
+                                                                                            </div>
+                                                                                            <div class="payment">
+                                                                                                <span class="title">Опата</span>
+                                                                                                <span class="value">
+                                                                                            Аванс 50% после погрузки на р/сч. Полный расчёт на р/сч. ИП после сдачи ттн в кафе
+                                                                                            Душенька в папку для Олега
+                                                                                        </span>
+                                                                                            </div>
+                                                                                            <div class="note">
+                                                                                                <span class="title">Примечание</span>
+                                                                                                <span class="value">+79186700448 Лариса! ИП обязательно!</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                                            <div class="_1">
+                                                                                <span class="distance">336 км</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                                            </div>
+                                                                            <div class="_3">
+                                                                                <span class="stevedore">КСК (41 причал)</span>
+                                                                                <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                                                <span class="warning">Лимит</span>
+                                                                            </div>
+                                                                            <div class="_4">
+                                                                                <span class="weight"><b>2000</b> т</span>
+                                                                                <span class="culture">Кукуруза</span>
+                                                                            </div>
+                                                                            <div class="_5">
+                                                                                <span class="price"><b>1,25</b> руб./км</span>
+                                                                                <span class="bargain">без торга,</span>
+                                                                                <span class="organization">ИП</span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="rating" data-rating="4">
+                                                                                    <img alt="1" src="img/star_Y.svg" title="">
+                                                                                    <img alt="2" src="img/star_Y.svg" title="">
+                                                                                    <img alt="3" src="img/star_Y.svg" title="">
+                                                                                    <img alt="4" src="img/star_Y.svg" title="">
+                                                                                    <img alt="5" src="img/star_G.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                                                <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore2_2">Подробнее</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="accordion">
+                                                                            <div id="toggleMore2_2" class="collapse table_actual_orders_more">
+                                                                                <div class="flex_row">
+                                                                                    <div class="item_map">
+                                                                                        <div id="item_map2_2"></div>
+                                                                                        <div class="flex_col">
+                                                                                            <span class="text">Узнайте, какое расстояние от вас до погрузки</span>
+                                                                                            <a href="" class="find_out_distance">Узнать расстояние</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="item_info">
+                                                                                        <div class="head flex_row">
+                                                                                            <div class="warning_message">
+                                                                                                Достигнут лимит на прием автомобилей на данного экспортера данной культуры. Может быть задержка с выгрузкой
+                                                                                            </div>
+                                                                                            <div class="inf flex_row">
+                                                                                                <span class="numeric_order">№ 109808</span>
+                                                                                                <span class="view_order">601</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="body flex_row">
+                                                                                            <div class="loading_method">
+                                                                                                <span class="title">Способ погрузки</span>
+                                                                                                <span class="value">Амкодор</span>
+                                                                                            </div>
+                                                                                            <div class="allowable_shortage">
+                                                                                                <span class="title">Допустимая недостача</span>
+                                                                                                <span class="value">0.4%</span>
+                                                                                            </div>
+                                                                                            <div class="loading_capacity_scales">
+                                                                                                <span class="title">Грузподъемность весов на погрузке</span>
+                                                                                                <span class="value">60 т</span>
+                                                                                            </div>
+                                                                                            <div class="sediment">
+                                                                                                <span class="title">Простой</span>
+                                                                                                <span class="value">после 3-х суток, 1200/сутки</span>
+                                                                                            </div>
+                                                                                            <div class="payment">
+                                                                                                <span class="title">Опата</span>
+                                                                                                <span class="value">
+                                                                                            Аванс 50% после погрузки на р/сч. Полный расчёт на р/сч. ИП после сдачи ттн в кафе
+                                                                                            Душенька в папку для Олега
+                                                                                        </span>
+                                                                                            </div>
+                                                                                            <div class="note">
+                                                                                                <span class="title">Примечание</span>
+                                                                                                <span class="value">+79186700448 Лариса! ИП обязательно!</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                                            <div class="_1">
+                                                                                <span class="distance">336 км</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                                            </div>
+                                                                            <div class="_3">
+                                                                                <span class="stevedore">КСК (41 причал)</span>
+                                                                                <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                                                <span class="warning">Лимит</span>
+                                                                            </div>
+                                                                            <div class="_4">
+                                                                                <span class="weight"><b>2000</b> т</span>
+                                                                                <span class="culture">Кукуруза</span>
+                                                                            </div>
+                                                                            <div class="_5">
+                                                                                <span class="price"><b>1,25</b> руб./км</span>
+                                                                                <span class="bargain">без торга,</span>
+                                                                                <span class="organization">ИП</span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="rating" data-rating="4">
+                                                                                    <img alt="1" src="img/star_Y.svg" title="">
+                                                                                    <img alt="2" src="img/star_Y.svg" title="">
+                                                                                    <img alt="3" src="img/star_Y.svg" title="">
+                                                                                    <img alt="4" src="img/star_Y.svg" title="">
+                                                                                    <img alt="5" src="img/star_G.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                                                <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore2_3">Подробнее</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="accordion">
+                                                                            <div id="toggleMore2_3" class="collapse table_actual_orders_more">
+                                                                                <div class="flex_row">
+                                                                                    <div class="item_map">
+                                                                                        <div id="item_map2_3"></div>
+                                                                                        <div class="flex_col">
+                                                                                            <span class="text">Узнайте, какое расстояние от вас до погрузки</span>
+                                                                                            <a href="" class="find_out_distance">Узнать расстояние</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="item_info">
+                                                                                        <div class="head flex_row">
+                                                                                            <div class="warning_message">
+                                                                                                Достигнут лимит на прием автомобилей на данного экспортера данной культуры. Может быть задержка с выгрузкой
+                                                                                            </div>
+                                                                                            <div class="inf flex_row">
+                                                                                                <span class="numeric_order">№ 109808</span>
+                                                                                                <span class="view_order">601</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="body flex_row">
+                                                                                            <div class="loading_method">
+                                                                                                <span class="title">Способ погрузки</span>
+                                                                                                <span class="value">Амкодор</span>
+                                                                                            </div>
+                                                                                            <div class="allowable_shortage">
+                                                                                                <span class="title">Допустимая недостача</span>
+                                                                                                <span class="value">0.4%</span>
+                                                                                            </div>
+                                                                                            <div class="loading_capacity_scales">
+                                                                                                <span class="title">Грузподъемность весов на погрузке</span>
+                                                                                                <span class="value">60 т</span>
+                                                                                            </div>
+                                                                                            <div class="sediment">
+                                                                                                <span class="title">Простой</span>
+                                                                                                <span class="value">после 3-х суток, 1200/сутки</span>
+                                                                                            </div>
+                                                                                            <div class="payment">
+                                                                                                <span class="title">Опата</span>
+                                                                                                <span class="value">
+                                                                                            Аванс 50% после погрузки на р/сч. Полный расчёт на р/сч. ИП после сдачи ттн в кафе
+                                                                                            Душенька в папку для Олега
+                                                                                        </span>
+                                                                                            </div>
+                                                                                            <div class="note">
+                                                                                                <span class="title">Примечание</span>
+                                                                                                <span class="value">+79186700448 Лариса! ИП обязательно!</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="flex: 0 0 100%; flex-wrap: wrap;">
+                                                                            <div class="_1">
+                                                                                <span class="distance">336 км</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                                            </div>
+                                                                            <div class="_3">
+                                                                                <span class="stevedore">КСК (41 причал)</span>
+                                                                                <span class="locality">г. Новороссийск, Краснодарский край</span>
+                                                                                <span class="warning">Лимит</span>
+                                                                            </div>
+                                                                            <div class="_4">
+                                                                                <span class="weight"><b>2000</b> т</span>
+                                                                                <span class="culture">Кукуруза</span>
+                                                                            </div>
+                                                                            <div class="_5">
+                                                                                <span class="price"><b>1,25</b> руб./км</span>
+                                                                                <span class="bargain">без торга,</span>
+                                                                                <span class="organization">ИП</span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="rating" data-rating="4">
+                                                                                    <img alt="1" src="img/star_Y.svg" title="">
+                                                                                    <img alt="2" src="img/star_Y.svg" title="">
+                                                                                    <img alt="3" src="img/star_Y.svg" title="">
+                                                                                    <img alt="4" src="img/star_Y.svg" title="">
+                                                                                    <img alt="5" src="img/star_G.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                                                <div class="accordion_header collapsed" data-toggle="collapse" data-target="#toggleMore2_4">Подробнее</div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="accordion">
+                                                                            <div id="toggleMore2_4" class="collapse table_actual_orders_more">
+                                                                                <div class="flex_row">
+                                                                                    <div class="item_map">
+                                                                                        <div id="item_map2_4"></div>
+                                                                                        <div class="flex_col">
+                                                                                            <span class="text">Узнайте, какое расстояние от вас до погрузки</span>
+                                                                                            <a href="" class="find_out_distance">Узнать расстояние</a>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="item_info">
+                                                                                        <div class="head flex_row">
+                                                                                            <div class="warning_message">
+                                                                                                Достигнут лимит на прием автомобилей на данного экспортера данной культуры. Может быть задержка с выгрузкой
+                                                                                            </div>
+                                                                                            <div class="inf flex_row">
+                                                                                                <span class="numeric_order">№ 109808</span>
+                                                                                                <span class="view_order">601</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="body flex_row">
+                                                                                            <div class="loading_method">
+                                                                                                <span class="title">Способ погрузки</span>
+                                                                                                <span class="value">Амкодор</span>
+                                                                                            </div>
+                                                                                            <div class="allowable_shortage">
+                                                                                                <span class="title">Допустимая недостача</span>
+                                                                                                <span class="value">0.4%</span>
+                                                                                            </div>
+                                                                                            <div class="loading_capacity_scales">
+                                                                                                <span class="title">Грузподъемность весов на погрузке</span>
+                                                                                                <span class="value">60 т</span>
+                                                                                            </div>
+                                                                                            <div class="sediment">
+                                                                                                <span class="title">Простой</span>
+                                                                                                <span class="value">после 3-х суток, 1200/сутки</span>
+                                                                                            </div>
+                                                                                            <div class="payment">
+                                                                                                <span class="title">Опата</span>
+                                                                                                <span class="value">
+                                                                                            Аванс 50% после погрузки на р/сч. Полный расчёт на р/сч. ИП после сдачи ттн в кафе
+                                                                                            Душенька в папку для Олега
+                                                                                        </span>
+                                                                                            </div>
+                                                                                            <div class="note">
+                                                                                                <span class="title">Примечание</span>
+                                                                                                <span class="value">+79186700448 Лариса! ИП обязательно!</span>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Actual orders (map + list)-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="panel2" class="tab-pane fade">
+                            <h3>Ваши заявки</h3>
+                            <p>Содержимое панели Ваши заявки...</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Подать заявку -->
+    <div id="createOrderInfo" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="createOrderInfo-form" autocomplete="" enctype="multipart/form-data">
+                    <button type="button" class="c-close close closeModal" id="" data-dismiss="modal" aria-hidden="true">×</button>
+                    <div class="modal-body">
+                        <label for="" class="c-form__label c-caption__h3 c-caption--darkblue">Подать заявку</label>
+                        <div class="c-paragraph c-paragraph--darkblue">
+                            Чтобы оставить заявку, вам нужно зарегистрироваться или войти на электронную торговую площадку
+                            Поток.
+                        </div>
+                        <h4 class="c-caption__h3 c-caption--link">Условия участия в Потоке</h4>
+                        <div class="c-form__substrate zv-flex-row nowrap vertical-align align-side-by-side">
+                            <div class="zv-flex-row vertical-align nowrap">
+                                <a href="" id="createOrderInfo_submit" class="c-button c-button--shadow c-button--blue">Войти</a>
+                                <a href="" class="c-caption__h3 c-caption--link">Зарегистрироваться</a>
+                            </div>
+                            <a href="" class="c-potok">Поток</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Подать заявку -->
+    <div id="createOrder" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog modal-lg" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="createOrder-form" autocomplete="" enctype="multipart/form-data">
+                    <button type="button" class="c-close close closeModal" data-dismiss="modal" aria-hidden="true">×</button>
+                    <div class="modal-body">
+                        <label for="" class="c-form__label c-caption__h3 c-caption--darkblue">Подать заявку</label>
+                        <div class="c-form__substrate zv-flex-row nowrap vertical-align align-side-by-side">
+                            <div class="">
+                                <span class="c-caption--darkblue">Вы подаёте заявку, как клиент Потока с номером:</span>
+                                <span class="c-caption--darkblue c-caption--bold">+7 920 4** ** 35</span>
+                            </div>
+                            <a href="" class="c-potok">Поток</a>
+                        </div>
+                        <div class="c-form__fieldset">
+                            <div class="c-form_group zv-flex-row nowrap">
+                                <div class="c-form__wrap c-pseudo" id="start-date">
+                                    <input type="text" class="c-form__field c-form__field--tr datetimepicker2 c-caption__h4--large c-caption--darkblue" placeholder="" value="">
+                                </div>
+                                <div class="c-form__wrap c-pseudo" id="finish-date">
+                                    <input type="text" class="c-form__field c-form__field--tr datetimepicker2 c-caption__h4--large c-caption--darkblue" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="c-form_group zv-flex-row nowrap">
+                                <div class="c-form__wrap c-pseudo" id="distance">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="1 332 км">
+                                </div>
+                                <div class="c-form__wrap c-pseudo" id="rate">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="1,23 ₽/кг">
+                                </div>
+                            </div>
+                            <div class="c-form_group zv-flex-row nowrap">
+                                <div class="c-form__wrap c-pseudo" id="projected-weight">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="3 200 кг">
+                                </div>
+                                <div class="c-form__wrap c-pseudo" id="approximately">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="189 335,32 ₽">
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="c-caption__h4 c-caption__h4--large">Заявка</h4>
+                        <label for="date" class="c-form__label c-paragraph c-caption--gray">Дата</label>
+                        <div class="c-form__wrap one-of-two">
+                            <input type="text" id="date" name="date" class="c-form__field datetimepicker2" title="" value="" required="" placeholder="Выберите дату" autofocus>
+                        </div>
+                        <div class="c-quick-links zv-flex-row vertical-align">
+                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Сегодня</span></a>
+                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Завтра</span></a>
+                        </div>
+                        <label for="role_btn_1" class="c-form__label c-paragraph c-caption--gray">Время</label>
+                        <div class="c-form__group zv-flex-col align-left c-radio-group c-radio-group--circle">
+                            <input type="radio" id="role_btn_1" name="role" class="c-radio-group__input" value="" checked="">
+                            <label for="role_btn_1" class="c-radio-group__label" tabindex="3">8:00—12:00</label>
+                            <input type="radio" id="role_btn_2" name="role" class="c-radio-group__input" value="">
+                            <label for="role_btn_2" class="c-radio-group__label" tabindex="4">12:00—14:00</label>
+                            <input type="radio" id="role_btn_3" name="role" class="c-radio-group__input" value="">
+                            <label for="role_btn_3" class="c-radio-group__label" tabindex="3">14:00—16:00</label>
+                            <input type="radio" id="role_btn_4" name="role" class="c-radio-group__input" value="">
+                            <label for="role_btn_4" class="c-radio-group__label" tabindex="4">16:00—18:00</label>
+                        </div>
+                        <div class="c-form__group select-group">
+                            <div class="zv-flex-row nowrap align-side-by-side">
+                                <span class="c-form__label c-paragraph c-caption--gray">Транспорт 1</span>
+                                <a href="" class="c-paragraph--link">Удалить</a>
+                            </div>
+                            <div class=" c-form__wrap wrap_select major w100">
+                                <select name="culture" id="transport" class="form-control c-form__field culture select-custom w100" required>
+                                    <option value="">Выберите водителя</option>
+                                    <option  class="down" value="1">Любая</option>
+                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                </select>
+                            </div>
+                            <div class=" c-form__wrap wrap_select major w100">
+                                <select name="culture" id="tractor1" class="form-control c-form__field culture select-custom w100" required>
+                                    <option value="">Выберите тягач</option>
+                                    <option  class="down" value="1">Любая</option>
+                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                </select>
+                            </div>
+                            <div class=" c-form__wrap wrap_select major w100">
+                                <select name="culture" id="tractor2" class="form-control c-form__field culture select-custom w100" required>
+                                    <option value="">Выберите тягач</option>
+                                    <option  class="down" value="1">Любая</option>
+                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                </select>
+                            </div>
+                            <a href="" class="c-button c-button--w100 c-button--empty-b add_exporter"><span class="zv-icon-add-export"></span><span class="title">Добавить транспорт</span></a>
+                        </div>
+                        <div class="zv-flex-row nowrap vertical-align">
+                            <button type="submit" id="createOrder_submit" class="c-button c-button--blue c-button--shadow">Подать заявку</button>
+                            <div class="c-paragraph c-paragraph--contrasting c-paragraph--lightgray">
+                                После подачи, заявка будет доступна <a href="" class="c-link c-link--gray">в приложении Поток</a>. Ответ на заявку придёт туда же.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Заявка подана -->
+    <div id="finishCreating" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <div class="modal-body zv-flex-col align-middle">
+                    <img src="img/icon_Check.svg" width="51" height="48" alt="">
+                    <label class="c-form__label c-caption__h3 c-caption--darkblue">Заявка подана</label>
+                    <label class="c-paragraph">Посмотреть заявку можно <a href="" class="c-link c-link--gray">в приложении Поток</a>. <br>Ответ на заявку придёт туда же.</label>
+                    <button type="button" id="finishInfo_close" class="c-button c-button--blue c-button--shadow closeModal" data-dismiss="modal" aria-hidden="true" tabindex="2">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/date_time_picker.js"></script>
+
+    <script src="js/lib/bootstrap.min.js"></script>
+
+    <script src="js/scroll_custom.js"></script>
+    <script src="js/search_page.js"></script>
+
+    <!--  Select custom style  -->
+    <script src="js/lib/jquery.mousewheel.min.js"></script>
+    <script src="js/lib/jquery.formstyler.js"></script>
+    <script src="js/lib/jquery.scrollbar.js"></script>
+    <script type="text/javascript" src="js/select_custom_style.js"></script>
+
+    <!-- No-UI-slider (slider distance) -->
+    <script src="js/lib/nouislider.js"></script>
+    <script type="text/javascript" src="js/slider_range.js"></script>
+
+    <script src="js/lib/jquery.inputmask.bundle.js"></script>
+
+    <script src="js/lib/passfield.js"></script>
+    <script src="js/lib/locales.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(function () {
+
+            // Actual orders (list)
+            $('.table_actual_orders').on('show.bs.collapse', '.table_actual_orders_more', function() {
+                $(this).closest('.table_row').addClass('gray_bg');
+            });
+            $('.table_actual_orders').on('hide.bs.collapse', '.table_actual_orders_more', function() {
+                $(this).closest('.table_row').removeClass('gray_bg');
+            });
+
+            // Orders (search, filter)
+            $('.search_orders').on('hide.bs.collapse', '#toggleAllParams', function() {
+                //при сворачивании панели очищать поля
+                $(this).find('input').val('');
+                $(this).find('input').attr('value','');
+                $(this).find('select option').prop('selected', false);
+                $(this).find('select option').removeAttr('selected');
+                $(this).find('select option')[0].selectedIndex = -1;
+                $(this).find('select').next().find('.jq-selectbox__select-text').text('');
+            });
+
+            // Accordion ToggleAllParams (костыль для Firefox...)
+            $('#toggleAllParams').on('hidden.bs.collapse', function(){
+                $(this).parent().addClass('hide');
+            });
+            $('#toggleAllParams').on('show.bs.collapse', function(){
+                $(this).parent().removeClass('hide');
+            });
+
+            // временно, выкосить
+            $(document).on('click', '#createOrderInfo_submit', function(event) {
+                event.preventDefault();
+                $(this).closest('.modal').modal('hide');
+                $('.modal#createOrder').modal('show');
+            });
+
+            $(document).on('click', '#createOrder_submit', function(event) {
+                event.preventDefault();
+                $(this).closest('.modal').modal('hide');
+                $('.modal#finishCreating').modal('show');
+            });
+
+//            //plaseholder input
+//            $('form').on('load keypress change', 'input.form-control, select.form-control, textarea.form-control', function() {
+//                $(this).parent().addClass('totop');
+//            });
+//
+//            $('form').on('blur', 'select.form-control, textarea.form-control', function() {
+//                if($(this).val() === '' || $(this).val() === '0') {
+//                    $(this).parent().removeClass('totop');
+//                }
+//            });
+//
+//            $('form').on('blur', 'input.form-control', function() {
+//                if($(this).val() === '' || $(this).val() === '0') {
+//                    $(this).parent().removeClass('totop');
+//                }
+//            });
+//
+//            // select
+//            $("select#place-load").change(function(){
+//                if($(this).val() == 9999) {
+//                    $(this).next().show();
+//                } else {
+//                    return false;
+//                }
+//            });
+//
+//            $('form').on('blur', 'select#place-load', function() {
+//                $(this).next().hide();
+//            });
+//
+//            //tooltip
+//            $('.progress-bar-stage').mouseenter(function() {
+//                var stage = $(this);
+//                var str = stage[0].className.split(' ');
+//                var result = str[0];
+//                switch (result) {
+//                    case 'red-scale':
+//                        $(this).parent().siblings('.tooltip-orange, .tooltip-yellow').hide();
+//                        $(this).parent().siblings('.tooltip-red').show();
+//                        break;
+//                    case 'orange-scale':
+//                        $(this).parent().siblings('.tooltip-red, .tooltip-yellow').hide();
+//                        $(this).parent().siblings('.tooltip-orange').show();
+//                        break;
+//                    case 'yellow-scale':
+//                        $(this).parent().siblings('.tooltip-orange, .tooltip-red').hide();
+//                        $(this).parent().siblings('.tooltip-yellow').show();
+//                        break;
+//                }
+//            });
+//            $('.progress-bar-stage').mouseleave(function() {
+//                $(this).parent().siblings('.tooltip-yellow, .tooltip-orange, .tooltip-red').hide();
+//            });
+//            $(document).on('click', '.progress-bar-stage', function(event) {
+//                $(this).mouseover();
+//            });
+//
+//            // date & time
+//            $('form').on('click', '.datepicker-input', function() {
+//                if($(this).val() !== '') {
+//                    $(this).parent().addClass('totop');
+//                }
+//            });
+//
+//            $('.datetimepicker1').datetimepicker({
+//                locale: 'ru',
+//                format: 'YYYY-MM-DD HH:MM:SS',
+//            });
+//
+//            $('.datetimepicker1').on("dp.change",function (e) {
+//                $(this).data('DateTimePicker').hide();
+//            });
+//
+//            $('.timer1').datetimepicker({
+//                locale: 'ru',
+//                format: 'LT'//'HH:MM'
+//            });
+//
+//            $('.timer2').datetimepicker({
+//                locale: 'ru',
+//                format: 'LT'//'HH:MM:SS'
+//            });
+//
+//            $('[id^="start-time-load"]').datetimepicker({
+//                locale: 'ru',
+//                format: 'DD.MM.YYYY HH:MM'
+//            });
+//            $('[id^="finish-time-load"]').datetimepicker({
+//                locale: 'ru',
+//                format: 'DD.MM.YYYY HH:MM',
+//                useCurrent: false //Important! See issue #1075
+//            });
+//            $('[id^="start-time-load"]').on("dp.change", function (e) {
+//                $('[id^="finish-time-load"]').data("DateTimePicker").minDate(e.date);
+//            });
+//            $('[id^="finish-time-load"]').on("dp.change", function (e) {
+//                $('[id^="start-time-load"]').data("DateTimePicker").maxDate(e.date);
+//            });
+        });
+//
+//        // prewiew img
+//        $('#createOrder').on('click', '.del', function(event) {
+//            $(this).parent().find('img').remove();
+//            $(this).removeClass('del').parent().removeClass('prewiew');
+//        });
+//
+//        // #price-order (бегунок)
+//        $('.number-gr input').on('input change paste', function() {
+//            $(this).val(this.value.replace(/[^0-9\-]/, ''));
+//        });
+//
+//        $('.number-gr > div').on('click', function() {
+//            var input = $(this).siblings('input'); // инпут
+//            var value = parseInt(input.val()) || 0; // получаем value инпута или 0
+//            if ($(this).hasClass('minus')) {
+//                value = value - 1; // вычитаем из value 1
+//            }
+//            if ($(this).hasClass('plus')) {
+//                value = value + 1; // прибавляем к value 1
+//            }
+//            input.val(value).change(); // выводим полученное value в инпут; триггер .change() - на случай, если на изменение этого инпута у вас уже объявлен еще какой-то обработчик
+//        });
+//
+//        // menu
+//        $(".stages-list").on("click","a", function (event) {
+////            event.preventDefault();
+//            var id  = $(this).attr('href'),
+//                top = $(id).offset().top;
+//            $('html,body').animate({
+//                scrollTop: top
+//            }, 1500);
+//        });
+//
+//        //infowindow map
+
+    });
+</script>
+
+</body>
+</html>

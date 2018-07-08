@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon timeslot</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01_Zernovozam" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-35.000000, -349.000000)">
+        <g id="sidebar" fill="#64C7FC" fill-rule="nonzero">
+            <g id="menu" transform="translate(0.000000, 202.000000)">
+                <path d="M44,149 C40.1340068,149 37,152.134007 37,156 C37,159.865993 40.1340068,163 44,163 C47.8659932,163 51,159.865993 51,156 C51,155.218377 50.871893,154.466674 50.6355302,153.764744 L44,157 L44,149 Z M44,165 C39.0294373,165 35,160.970563 35,156 C35,151.029437 39.0294373,147 44,147 C48.9705627,147 53,151.029437 53,156 C53,160.970563 48.9705627,165 44,165 Z" id="icon-timeslot"></path>
+            </g>
+        </g>
+    </g>
+</svg>

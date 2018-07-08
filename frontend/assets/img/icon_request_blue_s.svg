@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>F5C35541-21C8-4A97-A0FD-012B46B556A1</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_Add-Request" transform="translate(-507.000000, -497.000000)" fill="#64C7FC" fill-rule="nonzero">
+            <g id="1-st-Screen" transform="translate(280.000000, 32.000000)">
+                <g id="search" transform="translate(0.000000, 200.000000)">
+                    <g id="Button-Add" transform="translate(88.000000, 250.000000)">
+                        <path d="M140,15 L154,15 C154.552285,15 155,15.4477153 155,16 L155,32 C155,32.5522847 154.552285,33 154,33 L140,33 C139.447715,33 139,32.5522847 139,32 L139,16 C139,15.4477153 139.447715,15 140,15 Z M141,17 L141,31 L153,31 L153,17 L141,17 Z M144,19 L150,19 C150.552285,19 151,19.4477153 151,20 C151,20.5522847 150.552285,21 150,21 L144,21 C143.447715,21 143,20.5522847 143,20 C143,19.4477153 143.447715,19 144,19 Z M144,23 L150,23 C150.552285,23 151,23.4477153 151,24 C151,24.5522847 150.552285,25 150,25 L144,25 C143.447715,25 143,24.5522847 143,24 C143,23.4477153 143.447715,23 144,23 Z M144,27 L146,27 C146.552285,27 147,27.4477153 147,28 C147,28.5522847 146.552285,29 146,29 L144,29 C143.447715,29 143,28.5522847 143,28 C143,27.4477153 143.447715,27 144,27 Z" id="icon-request-blue-S"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

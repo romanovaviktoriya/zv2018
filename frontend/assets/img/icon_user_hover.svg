@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon user</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01_Zernovozam" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-35.000000, -144.000000)">
+        <g id="sidebar" fill="#64C7FC" fill-rule="nonzero">
+            <g id="Login" transform="translate(32.000000, 142.000000)">
+                <path d="M7.66564277,12.14891 C6.63388085,11.071324 6,9.60968742 6,8 C6,4.6862915 8.6862915,2 12,2 C15.3137085,2 18,4.6862915 18,8 C18,9.60968742 17.3661191,11.071324 16.3343572,12.14891 C19.0058278,12.7555936 21,15.1449149 21,18 L21,19 C21,19.5522847 20.5522847,20 20,20 L4,20 C3.44771525,20 3,19.5522847 3,19 L3,18 C3,15.1449149 4.99417218,12.7555936 7.66564277,12.14891 Z M12,12 C14.209139,12 16,10.209139 16,8 C16,5.790861 14.209139,4 12,4 C9.790861,4 8,5.790861 8,8 C8,10.209139 9.790861,12 12,12 Z M19,18 C19,15.790861 17.209139,14 15,14 L9,14 C6.790861,14 5,15.790861 5,18 L19,18 Z" id="icon-user"></path>
+            </g>
+        </g>
+    </g>
+</svg>

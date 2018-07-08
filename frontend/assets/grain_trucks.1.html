@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Зерновозы</title>
+
+    <!-- favicon
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1f2740">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1f2740">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#1f2740">-->
+
+    <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/lib.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <script src="/js/lib/jquery-1.12.4.min.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <a class="navbar-brand c-logo__brand" href="#"><span class="blue-text">Zerno</span>vozam</a>
+            </div>
+            <!--<div class="navbar-collapse collapse">-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li><a href="/index.html" class="p_main">Главная</a></li>-->
+                    <!--<li><a href="/orders.html" class="p_orders">Заявки</a></li>-->
+                    <!--<li class="active"><a href="/" class="p_trucks">Зерновозы</a></li>-->
+                    <!--<li><a href="/timeslots.html" class="p_timeslots">Таймслоты</a></li>-->
+                    <!--<li><a href="" class="p_services">Сервисы</a></li>-->
+                    <!--<li><a href="" class="p_forum">Форум</a></li>-->
+                <!--</ul>-->
+                <!--<form class="navbar-form navbar-right">-->
+                    <!--<input type="text" class="form-control" placeholder="Search...">-->
+                <!--</form>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="c-sidebar zv-flex-col justify-side-by-side">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <div class="c-sidebar__header">
+                    <div class="c-logo">
+                        <a href="/" class="c-logo__brand"><span class="blue-text">Zerno</span>vozam</a>
+                        <span class="c-logo__text">Сервис №1 в России для заказчиков и перевозчиков зерна</span>
+                    </div>
+
+                    <a href="#createOrderInfo" class="c-login" data-toggle="modal">Войти</a>
+
+                    <div class="c-user c-hidden"><!-- user-block -->
+                        <div class="c-user__header collapsed" data-toggle="collapse" data-target="#toggleUserInfo"><!--accordion_header-->
+                            <div class="title">Иванов Сергей</div>
+                        </div>
+                        <div id="toggleUserInfo" class="c-user__body collapse">
+                            <a href="">Что-то</a>
+                            <a href="">Еще немного</a>
+                            <a href="">И еще</a>
+                        </div>
+                        <a href="" class="c-user__rating c-rating" data-rating="3"><!-- rating_user -->
+                            <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                            <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                            <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                            <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                            <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                        </a>
+                    </div>
+                    <ul class="c-main-menu"><!--nav nav-sidebar-->
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/index.html" class="c-main-menu__main zv-flex-row nowrap"><span class="zv-icon-menu-home"></span>Главная</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/orders.html" class="c-main-menu__orders zv-flex-row nowrap"><span class="zv-icon-menu-orders"></span>Заявки</a>
+                            <a href="/add_order.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item c-main-menu__item--active zv-flex-row align-side-by-side">
+                            <a href="/grain_trucks.html" class="c-main-menu__trucks zv-flex-row nowrap"><span class="zv-icon-menu-trucks"></span>Зерновозы</a>
+                            <a href="/grain_trucks.2.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/timeslots.html" class="c-main-menu__timeslots zv-flex-row nowrap"><span class="zv-icon-menu-timeslots"></span>Таймслоты</a>
+                            <a href="/add_timeslot.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__services zv-flex-row nowrap"><span class="zv-icon-menu-serves"></span>Сервисы</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-forum"></span> Форум</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/search_truck.html" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-search"></span> Поиск АТП и Авто</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="c-sidebar__footer">
+                    <div class="c-sidebar__support">
+                        <h5 class="technical_support_title">Техподдержка</h5>
+                        <a href="tel:+79628604827" class="technical_support_phone">+7 (962) 860-48-27</a>
+                    </div>
+                    <ul class="c-bottom-nav zv-flex-row">
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Тарифы</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Оферта</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Контакты</a></li>
+                    </ul>
+                    <div class="c-copyright"><a href="" class="c-paragraph">ООО "Шипго" © 2014-2017</a></div>
+                </div>
+            </div>
+            <div class="col-sm-12 main">
+                <section class="c-control-block grain_trucks">
+                    <div class="c-control-block__title zv-flex-row align-side-by-side">
+                        <a href="" class="c-button c-button--blue c-button--add">Добавить свой зерновоз</a>
+                        <h2 class="c-caption__h1">Зерновозы</h2>
+                    </div>
+                    <ul class="c-control-block__nav-tabs c-nav-tabs--section nav nav-tabs" id="tabs_orders">
+                        <li class="active"><a data-toggle="tab" href="#panel1">Поиск зерновозов</a></li>
+                        <li><a data-toggle="tab" href="#panel2">Ваши зерновозы</a></li>
+                    </ul>
+                    <div class="c-control-block__content tab-content">
+                        <div id="panel1" class="tab-pane fade in active">
+                            <section class="search_orders search_grain_trucks flex_row">
+                                <form action="" method="post" id="search_grain_trucks_form" class="validate" autocomplete="" enctype="multipart/form-data">
+                                    <div class="flex_row">
+                                        <div class="flex_row">
+                                            <div class="form-group location">
+                                                <label for="location">Место стоянки</label>
+                                                <input type="text" class="form-control" id="location" name="location" placeholder="" required>
+                                                <div class="flex_row quick_links hide">
+                                                    <a href="" class="">Астрахань</a>
+                                                    <a href="" class="">Новороссийск</a>
+                                                    <a href="" class="">Тамань</a>
+                                                </div>
+                                            </div>
+                                            <div class="form-group w100">
+                                                <label class="control-label">Рейтинг владельца</label>
+                                                <div class="wrap_select major w100">
+                                                    <select name="owner_rating" id="owner_rating" class="form-control owner_rating select-custom w100" required>
+                                                        <option value=""></option>
+                                                        <option  class="" value="1">Любой</option>
+                                                        <option class="" value="2">5</option>
+                                                        <option class="" value="3">4</option>
+                                                        <option class="" value="4">3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="group_check">
+                                                <input type="checkbox" id="only_free" name="only_free" value="" required checked>
+                                                <label for="only_free">Только свободные</label>
+                                            </div>
+                                        </div>
+                                        <button type="submit" id="" class="c-button c-button--blue c-button--shadow zv-flex-row vertical-align" value="">
+                                            <span class="zv-icon-search"></span>Найти зерновозы
+                                        </button>
+                                    </div>
+                                </form>
+                            </section>
+                            <div class="filter_history">
+                                <div class="c-accordion">
+                                    <div class="c-accordion__header accordion_header" data-toggle="collapse" data-target="#toggleHistorySearch" aria-expanded="true"><h3 class="c-caption__h3">История поиска</h3></div>
+                                    <div id="toggleHistorySearch" class="c-accordion__body collapse in" aria-expanded="true" style="">
+                                        <ul class="c-list-history">
+                                            <li class="c-list-history__item zv-flex-row nowrap vertical-align">
+                                                <a href="" class="zv-flex-row vertical-align">
+                                                    <span class="c-caption__h5">Чамлыкская ст-ца</span>
+                                                    <span class="zv-icon-arrow-r"></span>
+                                                    <span class="c-caption__h5">КСК (41 причал), до 20 т, от 25 руб./кг</span>
+                                                </a>
+                                            </li>
+                                            <li class="c-list-history__item zv-flex-row nowrap vertical-align">
+                                                <a href="" class="zv-flex-row vertical-align">
+                                                    <span class="c-caption__h5">Чамлыкская ст-ца</span>
+                                                    <span class="zv-icon-arrow-r"></span>
+                                                    <span class="c-caption__h5">НЗТ Новороссийск, от 120 т, от 125 руб./кг</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <a href="" class="c-show-more">Показать ещё</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex_col orders graintrucks">
+                                <div class="orders_header">
+                                    <div class="flex_row zv-flex-row vertical-align nowrap">
+                                        <h3 class="c-caption__h3">23 332 зерновоза</h3>
+                                        <div class="sorting_actual_orders">
+                                            <form action="" method="post" id="sorting_actual_orders_form" class="form-horizontal" autocomplete="" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <span class="control-label">упорядочить по</span>
+                                                    <div class="wrap_select major">
+                                                        <!--<label for="sorting_by"></label>-->
+                                                        <div class="jq-selectbox jqselect form-control sorting_by select-custom" id="sorting_by-styler">
+                                                            <select name="sorting_by" id="sorting_by" class="form-control sorting_by select-custom" required>
+                                                                <option value=""></option>
+                                                                <option  class="down" value="1">дате добавления</option>
+                                                                <option class="up" value="2">дате добавления</option>
+                                                                <option class="down" value="3">расстоянию</option>
+                                                                <option class="up" value="4">расстоянию</option>
+                                                                <option class="down" value="5">цене за 1км</option>
+                                                                <option class="up" value="6">цене за 1км</option>
+                                                                <option class="down" value="7">месту выгрузке</option>
+                                                                <option class="up" value="8">месту выгрузке</option>
+                                                                <option class="down" value="9">объему</option>
+                                                                <option class="up" value="10">объему</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orders_table">
+                                    <ul class="c-nav-tabs--view nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#orders_list" class="tab_list">Список</a></li>
+                                        <li><a data-toggle="tab" href="#orders_map" class="tab_map">Карта</a></li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <!-- Actual grain_trucks (list-table)-->
+                                        <div id="orders_list" class="tab-pane fade in active">
+                                            <div class="table_actual_orders table_actual_orders--graintrucks">
+                                                <div class="table_thead flex_row">
+                                                    <div class="th">Статус</div>
+                                                    <div class="th">Место стоянки</div>
+                                                    <div class="th">Владелец</div>
+                                                    <div class="th">Контакты</div>
+                                                </div>
+                                                <div class="table_body flex_col">
+                                                    <div class="table_row flex_row">
+                                                        <div class="flex_row" style="">
+                                                            <div class="_1">
+                                                                <span class="distance">Свободен</span>
+                                                                <span class="date">17:54, 01.12.17</span>
+                                                            </div>
+                                                            <div class="_2">
+                                                                <span class="locality">Буденновск г, Буденновский р-н, Ставропольский край</span>
+                                                                <span class="region">
+                                                                    Индивидуальный предприниматель, работаем с НДС и без НДС. Свободных 5 зерновозов. Готовы ездить в Тюменскую, Новосибирскую область.
+                                                                    Возможна перебазировка в город Новосибирск
+                                                                </span>
+                                                            </div>
+                                                            <div class="_6">
+                                                                <a href="" class="c-rating" data-rating="3">
+                                                                    <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                                    <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                                </a>
+                                                                <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                            </div>
+                                                            <div class="_7">
+                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table_row flex_row">
+                                                        <div class="flex_row" style="">
+                                                            <div class="_1 busy">
+                                                                <span class="distance">Занят</span>
+                                                                <span class="date">17:54, 01.12.17</span>
+                                                            </div>
+                                                            <div class="_2">
+                                                                <span class="locality">Заселье г, Ленинский р-н, Краснодарский край</span>
+                                                                <span class="region">
+                                                                    Индивидуальный предприниматель, работаем с НДС и без НДС. Свободных 5 зерновозов. Готовы ездить в Тюменскую,
+                                                                    Новосибирскую область. Возможна перебазировка в город Новосибирск
+                                                                </span>
+                                                            </div>
+                                                            <div class="_6">
+                                                                <a href="" class="c-rating" data-rating="3">
+                                                                    <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                                    <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                                </a>
+                                                                <a href="" class="company">Николаевский Ибрагим Мухамедович</a>
+                                                            </div>
+                                                            <div class="_7">
+                                                                <!--<a href="" class="show_contacts">Показать контакты</a>-->
+                                                                <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table_row flex_row">
+                                                        <div class="flex_row" style="">
+                                                            <div class="_1">
+                                                                <span class="distance">Свободен</span>
+                                                                <span class="date">17:54, 01.12.17</span>
+                                                            </div>
+                                                            <div class="_2">
+                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                            </div>
+                                                            <div class="_6">
+                                                                <a href="" class="c-rating" data-rating="3">
+                                                                    <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                    <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                                    <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                                </a>
+                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                            </div>
+                                                            <div class="_7">
+                                                                <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <img src="/img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="loader">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div id="orders_map" class="tab-pane fade">
+                                            <div class="wrap">
+                                                <div id="map"></div>
+                                                <div id="panel_my_location">
+                                                    <p class="text">
+                                                        С картой удобнее работать, когда вы видите своё местоположение относительно заявок.
+                                                    </p>
+                                                    <a href="" id="my_location">Показать моё местоположение</a>
+                                                </div>
+                                                <div id="actual_orders">
+                                                    <div class="header">
+                                                        <h3 class="count_actual_orders">3 зерновоза</h3>
+                                                        <button type="button" class="close" onClick="$(this).closest('#actual_orders').hide()" data-dismiss="modal" aria-hidden="true">×</button>
+                                                    </div>
+                                                    <div class="scrollbar-macosx" style="max-height: 100%;">
+                                                        <div class="permanent">
+                                                            <div class="table_actual_orders table_actual_orders--graintrucks">
+                                                                <div class="table_body flex_col">
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="">
+                                                                            <div class="_1">
+                                                                                <span class="distance">Свободен</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Буденновск г, Буденновский р-н, Ставропольский край</span>
+                                                                                <span class="region">
+                                                                    Индивидуальный предприниматель, работаем с НДС и без НДС. Свободных 5 зерновозов. Готовы ездить в Тюменскую, Новосибирскую область.
+                                                                    Возможна перебазировка в город Новосибирск
+                                                                </span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="c-rating" data-rating="3">
+                                                                                    <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                                                    <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <a href="" class="show_contacts">Показать контакты</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="">
+                                                                            <div class="_1 busy">
+                                                                                <span class="distance">Занят</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Заселье г, Ленинский р-н, Краснодарский край</span>
+                                                                                <span class="region">
+                                                                    Индивидуальный предприниматель, работаем с НДС и без НДС. Свободных 5 зерновозов. Готовы ездить в Тюменскую,
+                                                                    Новосибирскую область. Возможна перебазировка в город Новосибирск
+                                                                </span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="c-rating" data-rating="3">
+                                                                                    <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                                                    <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">Николаевский Ибрагим Мухамедович</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <!--<a href="" class="show_contacts">Показать контакты</a>-->
+                                                                                <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="table_row flex_row">
+                                                                        <div class="flex_row" style="">
+                                                                            <div class="_1">
+                                                                                <span class="distance">Свободен</span>
+                                                                                <span class="date">17:54, 01.12.17</span>
+                                                                            </div>
+                                                                            <div class="_2">
+                                                                                <span class="locality">Чамлыкская ст-ца</span>
+                                                                                <span class="region">Лабинский район, Краснодарский край</span>
+                                                                                <span class="trader">Артис агро Экспорт, ООО</span>
+                                                                            </div>
+                                                                            <div class="_6">
+                                                                                <a href="" class="c-rating" data-rating="3">
+                                                                                    <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                                                    <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                                                    <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                                                </a>
+                                                                                <a href="" class="company">ТЭК Гринслав</a>
+                                                                            </div>
+                                                                            <div class="_7">
+                                                                                <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <img src="/img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="loader">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Actual orders (map + list)-->
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div id="panel2" class="tab-pane fade">
+                            <section class="search_grain_trucks flex_row">
+                                <form action="" method="post" id="your_grain_trucks_form" class="validate" autocomplete="" enctype="multipart/form-data">
+                                    <div class="flex_row">
+                                        <div class="form-group flex-auto zv-flex-row nowrap vertical-align c-radio-group c-radio-group--quadro">
+                                            <input type="radio" id="all_view" name="view" class="c-radio-group__input" value="" required checked>
+                                            <label for="all_view" class="c-radio-group__label">Все</label>
+                                            <input type="radio" id="free_view" name="view" class="c-radio-group__input" value="" required>
+                                            <label for="free_view"  class="c-radio-group__label">Нет СТС</label>
+                                            <input type="radio" id="busy_view" name="view" class="c-radio-group__input" value="" required>
+                                            <label for="busy_view"  class="c-radio-group__label">Нет Договора</label>
+                                        </div>
+                                        <div class="form-group w100 select_group">
+                                            <label for="view_start">Показать сначала</label>
+                                            <div class="wrap_select major w100">
+                                                <select name="view_start" id="view_start" class="form-control view_start select-custom w100" required>
+                                                    <option value=""></option>
+                                                    <option  class="" value="1">Недавно добавленные</option>
+                                                    <option class="" value="2">Недавно добавленные</option>
+                                                    <option class="" value="3">Недавно добавленные</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </section>
+                            <section class="orders">
+                                <h3 class="section_subtitle">23 зерновоза</h3>
+                                <div class="table_actual_orders table_actual_orders--graintrucks grain_table">
+                                    <div class="table_thead flex_row">
+                                        <div class="th">Статус</div>
+                                        <div class="th">Инфо</div>
+                                        <div class="th">Владелец</div>
+                                        <div class="th">Контакты</div>
+                                    </div>
+                                    <div class="table_body flex_col">
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="status">Свободен</span>
+                                                    <span class="date">17:54, 01.12.17</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <div class="zv-flex-row">
+                                                        <span class="num_auto c-caption--bold">A355AA65</span>
+                                                        <span class="num_trailer">, AA000023</span>
+                                                    </div>
+                                                    <div class="zv-flex-row">
+                                                        <span>тел.: </span>
+                                                        <span class="phone c-caption--bold">+79034514026</span>
+                                                    </div>
+                                                </div>
+                                                <div class="_6">
+                                                    <a href="" class="c-rating" data-rating="3">
+                                                        <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                        <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                        <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                        <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                        <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                    </a>
+                                                    <a href="" class="company">Шевченко Максим Валерьевич</a>
+                                                </div>
+                                                <div class="_7">
+                                                    <a href="" class="show_contacts">Показать контакты</a>
+                                                    <a href="tel:+79206549300" class="contact_phone c-hidden">+7 920 654 93 00</a>
+                                                    <span class="c-status--check c-hidden">СТС</span>
+                                                    <span class="c-status--uncheck c-hidden">Договор</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex_row info_action">
+                                                <div class="info_block">
+                                                    <span class="num">№ 109808</span>
+                                                    <span class="view_count">601</span>
+                                                </div>
+                                                <div class="action_truck">
+                                                    <a href="" class="btn btn_inactive btn_del">Удалить</a>
+                                                    <!--<a href="" class="btn btn_inactive btn_occupy">Занять</a>-->
+                                                    <!--<a href="" class="btn btn_inactive btn_release">Свободен</a>-->
+                                                    <a href="" class="btn btn_inactive btn_doc">Документы</a>
+                                                </div>
+                                            </div>
+                                            <div class="flex_col info_deleting hide">
+                                                <img src="/img/icon_track_R.svg" width="21" height="15" alt="Удален">
+                                                <span class="status">Зерновоз удалён</span>
+                                                <a href="" data-item="" class="reestablish">Восстановить</a>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row" style="">
+                                                <div class="_1 busy">
+                                                    <span class="status">Занят</span>
+                                                    <span class="date">17:54, 01.12.17</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <div class="zv-flex-row">
+                                                        <span class="num_auto c-caption--bold">A355AA65</span>
+                                                        <span class="num_trailer">, AA000023</span>
+                                                    </div>
+                                                    <div class="zv-flex-row">
+                                                        <span>тел.: </span>
+                                                        <span class="phone  c-caption--bold">+79034514026</span>
+                                                    </div>
+                                                </div>
+                                                <div class="_6">
+                                                    <a href="" class="c-rating" data-rating="3">
+                                                        <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                                                        <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                                                        <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                                                        <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                                                        <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                                                    </a>
+                                                    <a href="" class="company">Николаевский Ибрагим Мухамедович</a>
+                                                </div>
+                                                <div class="_7">
+                                                    <a href="" class="show_contacts c-hidden">Показать контакты</a>
+                                                    <a href="tel:+79206549300" class="contact_phone">+7 920 654 93 00</a>
+                                                    <span class="c-status--check">СТС</span>
+                                                    <span class="c-status--uncheck">Договор</span>
+                                                </div>
+                                            </div>
+                                            <div class="flex_row info_action">
+                                                <div class="info_block">
+                                                    <span class="num">№ 109808</span>
+                                                    <span class="view_count">601</span>
+                                                </div>
+                                                <div class="action_truck">
+                                                    <a href="" class="btn btn_inactive btn_del">Удалить</a>
+                                                    <!--<a href="" class="btn btn_inactive btn_occupy">Занять</a>-->
+                                                    <!--<a href="" class="btn btn_inactive btn_release">Свободен</a>-->
+                                                    <a href="" class="btn btn_inactive btn_doc">Документы</a>
+                                                </div>
+                                            </div>
+                                            <div class="flex_col info_deleting hide">
+                                                <img src="/img/icon_track_R.svg" width="21" height="15" alt="Удален">
+                                                <span class="status">Зерновоз удалён</span>
+                                                <a href="" data-item="" class="reestablish">Восстановить</a>
+                                            </div>
+                                        </div>
+                                        <img src="/img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="loader">
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- modal dialog Подать заявку -->
+<div id="createOrder" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-lg" style="z-index: 10;">
+        <div class="modal-content">
+            <form action="" method="post" id="createOrder-form" autocomplete="" enctype="multipart/form-data">
+                <button type="button" class="close closeModal" id="" data-dismiss="modal" aria-hidden="true">×</button>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="/js/lib/bootstrap.min.js"></script>
+
+    <script src="/js/scroll_custom.js"></script>
+    <script src="/js/search_page.js"></script>
+
+    <!--  Select custom style  -->
+    <script src="/js/lib/jquery.mousewheel.min.js"></script>
+    <script src="/js/lib/jquery.formstyler.js"></script>
+    <script src="/js/lib/jquery.scrollbar.js"></script>
+    <script type="text/javascript" src="/js/select_custom_style.js"></script>
+
+    <!-- No-UI-slider (slider distance) -->
+    <script src="/js/lib/nouislider.js"></script>
+    <!--<script type="text/javascript" src="/js/slider_range.js"></script>-->
+
+    <!-- Check all -->
+    <script src="/js/check_all.js"></script>
+
+    <script src="/js/lib/jquery.inputmask.bundle.js"></script>
+
+    <script src="/js/lib/passfield.js"></script>
+    <script src="/js/lib/locales.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(function () {
+
+            // Actual orders (list)
+            $('.table_actual_orders').on('show.bs.collapse', '.table_actual_orders_more', function() {
+                $(this).closest('.table_row').addClass('gray_bg');
+            });
+            $('.table_actual_orders').on('hide.bs.collapse', '.table_actual_orders_more', function() {
+                $(this).closest('.table_row').removeClass('gray_bg');
+            });
+
+            // Orders (search, filter)
+            $('.search_orders').on('hide.bs.collapse', '#toggleAllParams', function() {
+                //при сворачивании панели очищать поля
+                $(this).find('input').val('');
+                $(this).find('input').attr('value','');
+                $(this).find('select option').prop('selected', false);
+                $(this).find('select option').removeAttr('selected');
+                $(this).find('select option')[0].selectedIndex = -1;
+                $(this).find('select').next().find('.jq-selectbox__select-text').text('');
+            });
+
+            // Tooltips
+            $(document).on('click', '[data-toggle="tooltip"]', function(event) {
+                event.preventDefault();
+                $(this).tooltip();
+            });
+
+            // Remove row in Your timeslots
+            $(document).on('click', '.my_timeslots .table_row .no', function() {
+                $(this).closest('.table_row').remove();
+            });
+
+            // Edit row in Your timeslots
+            $(document).on('click', '.my_timeslots .edit', function(event) {
+                event.preventDefault();
+                alert('Редактирование моего таймслота');
+            });
+
+            // Remove selection in Your timeslots
+            $(document).on('click', 'section.timeslots #panel2 .group_footer .no', function() {
+                $(this).closest('#panel2') .find('input[type="checkbox"]:checked').prop('checked', false);
+                $('.my_timeslots').find('.group_footer').addClass('hide');
+                alert('Выделение снято!');
+            });
+
+            // Remove my grain trucks
+            $(document).on('click', '.grain_table .btn_del', function(event) {
+                event.preventDefault();
+                var element =  $(this).closest('.table_row').find('.flex_row');
+                $(this).closest('.table_row').find('.info_deleting').removeClass('hide');
+                element.detach();
+
+                // Restoring deleting my grain truck
+                $(document).on('click', '.grain_table .reestablish', function(event) {
+                    event.preventDefault();
+                    alert('Восстановление удаленного зерновоза');
+                });
+            });
+
+
+
+//            //plaseholder input
+//            $('form').on('load keypress change', 'input.form-control, select.form-control, textarea.form-control', function() {
+//                $(this).parent().addClass('totop');
+//            });
+//
+//            $('form').on('blur', 'select.form-control, textarea.form-control', function() {
+//                if($(this).val() === '' || $(this).val() === '0') {
+//                    $(this).parent().removeClass('totop');
+//                }
+//            });
+//
+//            $('form').on('blur', 'input.form-control', function() {
+//                if($(this).val() === '' || $(this).val() === '0') {
+//                    $(this).parent().removeClass('totop');
+//                }
+//            });
+//
+//            // select
+//            $("select#place-load").change(function(){
+//                if($(this).val() == 9999) {
+//                    $(this).next().show();
+//                } else {
+//                    return false;
+//                }
+//            });
+//
+//            $('form').on('blur', 'select#place-load', function() {
+//                $(this).next().hide();
+//            });
+//
+//            //tooltip
+//            $('.progress-bar-stage').mouseenter(function() {
+//                var stage = $(this);
+//                var str = stage[0].className.split(' ');
+//                var result = str[0];
+//                switch (result) {
+//                    case 'red-scale':
+//                        $(this).parent().siblings('.tooltip-orange, .tooltip-yellow').hide();
+//                        $(this).parent().siblings('.tooltip-red').show();
+//                        break;
+//                    case 'orange-scale':
+//                        $(this).parent().siblings('.tooltip-red, .tooltip-yellow').hide();
+//                        $(this).parent().siblings('.tooltip-orange').show();
+//                        break;
+//                    case 'yellow-scale':
+//                        $(this).parent().siblings('.tooltip-orange, .tooltip-red').hide();
+//                        $(this).parent().siblings('.tooltip-yellow').show();
+//                        break;
+//                }
+//            });
+//            $('.progress-bar-stage').mouseleave(function() {
+//                $(this).parent().siblings('.tooltip-yellow, .tooltip-orange, .tooltip-red').hide();
+//            });
+//            $(document).on('click', '.progress-bar-stage', function(event) {
+//                $(this).mouseover();
+//            });
+//
+//            // date & time
+//            $('form').on('click', '.datepicker-input', function() {
+//                if($(this).val() !== '') {
+//                    $(this).parent().addClass('totop');
+//                }
+//            });
+//
+//            $('.datetimepicker1').datetimepicker({
+//                locale: 'ru',
+//                format: 'YYYY-MM-DD HH:MM:SS',
+//            });
+//
+//            $('.datetimepicker1').on("dp.change",function (e) {
+//                $(this).data('DateTimePicker').hide();
+//            });
+//
+//            $('.timer1').datetimepicker({
+//                locale: 'ru',
+//                format: 'LT'//'HH:MM'
+//            });
+//
+//            $('.timer2').datetimepicker({
+//                locale: 'ru',
+//                format: 'LT'//'HH:MM:SS'
+//            });
+//
+//            $('[id^="start-time-load"]').datetimepicker({
+//                locale: 'ru',
+//                format: 'DD.MM.YYYY HH:MM'
+//            });
+//            $('[id^="finish-time-load"]').datetimepicker({
+//                locale: 'ru',
+//                format: 'DD.MM.YYYY HH:MM',
+//                useCurrent: false //Important! See issue #1075
+//            });
+//            $('[id^="start-time-load"]').on("dp.change", function (e) {
+//                $('[id^="finish-time-load"]').data("DateTimePicker").minDate(e.date);
+//            });
+//            $('[id^="finish-time-load"]').on("dp.change", function (e) {
+//                $('[id^="start-time-load"]').data("DateTimePicker").maxDate(e.date);
+//            });
+        });
+//
+//        // prewiew img
+//        $('#createOrder').on('click', '.del', function(event) {
+//            $(this).parent().find('img').remove();
+//            $(this).removeClass('del').parent().removeClass('prewiew');
+//        });
+//
+//        // #price-order (бегунок)
+//        $('.number-gr input').on('input change paste', function() {
+//            $(this).val(this.value.replace(/[^0-9\-]/, ''));
+//        });
+//
+//        $('.number-gr > div').on('click', function() {
+//            var input = $(this).siblings('input'); // инпут
+//            var value = parseInt(input.val()) || 0; // получаем value инпута или 0
+//            if ($(this).hasClass('minus')) {
+//                value = value - 1; // вычитаем из value 1
+//            }
+//            if ($(this).hasClass('plus')) {
+//                value = value + 1; // прибавляем к value 1
+//            }
+//            input.val(value).change(); // выводим полученное value в инпут; триггер .change() - на случай, если на изменение этого инпута у вас уже объявлен еще какой-то обработчик
+//        });
+//
+//        // menu
+//        $(".stages-list").on("click","a", function (event) {
+////            event.preventDefault();
+//            var id  = $(this).attr('href'),
+//                top = $(id).offset().top;
+//            $('html,body').animate({
+//                scrollTop: top
+//            }, 1500);
+//        });
+//
+//        //infowindow map
+
+    });
+</script>
+
+</body>
+</html>

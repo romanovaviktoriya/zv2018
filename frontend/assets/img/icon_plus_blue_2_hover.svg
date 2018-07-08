@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="10px" viewBox="0 0 10 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>D5813D35-BBE1-4398-B635-1A544C33CB17</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="04_Add-Request" transform="translate(-526.000000, -1120.000000)" fill="#ffffff">
+            <g id="1-st-Screen" transform="translate(280.000000, 32.000000)">
+                <g id="search" transform="translate(0.000000, 200.000000)">
+                    <g id="Button-Add" transform="translate(88.000000, 868.000000)">
+                        <path d="M164.111111,23.8888889 L167,23.8888889 C167.552285,23.8888889 168,24.3366041 168,24.8888889 L168,25.1111111 C168,25.6633959 167.552285,26.1111111 167,26.1111111 L164.111111,26.1111111 L164.111111,29 C164.111111,29.5522847 163.663396,30 163.111111,30 L162.888889,30 C162.336604,30 161.888889,29.5522847 161.888889,29 L161.888889,26.1111111 L159,26.1111111 C158.447715,26.1111111 158,25.6633959 158,25.1111111 L158,24.8888889 C158,24.3366041 158.447715,23.8888889 159,23.8888889 L161.888889,23.8888889 L161.888889,21 C161.888889,20.4477153 162.336604,20 162.888889,20 L163.111111,20 C163.663396,20 164.111111,20.4477153 164.111111,21 L164.111111,23.8888889 Z" id="icon-plus-blue-2"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

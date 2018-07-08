@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon serves</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="01_Zernovozam" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-33.000000, -392.000000)">
+        <g id="sidebar" fill="#6D7996">
+            <g id="menu" transform="translate(0.000000, 202.000000)">
+                <path d="M53.3688797,204 C52.3314514,205.793404 50.3924199,207 48.1715729,207 C45.5591352,207 43.3366571,205.330385 42.5129843,203 L33,203 C31.8954305,203 31,202.104569 31,201 C31,199.895431 31.8954305,199 33,199 L42.5129843,199 C43.3366571,196.669615 45.5591352,195 48.1715729,195 C50.3924199,195 52.3314514,196.206596 53.3688797,198 L47.1715729,198 L45.1715729,201 L47.1715729,204 L53.3688797,204 Z" id="icon-serves" transform="translate(42.184440, 201.000000) rotate(-45.000000) translate(-42.184440, -201.000000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

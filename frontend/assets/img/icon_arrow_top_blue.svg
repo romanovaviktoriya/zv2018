@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="5px" viewBox="0 0 8 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon arrow down blue</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="02_Request-list" transform-origin="center center" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-481.000000, -478.000000)">
+        <g id="Filters" transform="translate(368.000000, 464.000000)" fill="#64C7FC">
+            <path d="M118,19 L118,16 C118,15.4477153 118.447715,15 119,15 C119.552285,15 120,15.4477153 120,16 L120,20 C120,20.5522847 119.552285,21 119,21 L115,21 C114.447715,21 114,20.5522847 114,20 C114,19.4477153 114.447715,19 115,19 L118,19 Z" id="icon-arrow-down-blue" transform="translate(117.000000, 18.000000) scale(1, -1) rotate(-315.000000) translate(-117.000000, -18.000000) "></path>
+        </g>
+    </g>
+</svg>

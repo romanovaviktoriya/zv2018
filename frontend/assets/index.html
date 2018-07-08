@@ -1,0 +1,1268 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Зерновозам</title>
+
+    <!-- favicon
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1f2740">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1f2740">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#1f2740">-->
+
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/lib.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <script src="js/lib/jquery-1.12.4.min.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <a class="navbar-brand c-logo__brand" href="#"><span class="blue-text">Zerno</span>vozam</a>
+            </div>
+            <!--<div class="navbar-collapse collapse">-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li class="active"><a href="/" class="p_main">Главная</a></li>-->
+                    <!--<li><a href="/orders.html" class="p_orders">Заявки</a></li>-->
+                    <!--<li><a href="/grain_trucks.html" class="p_trucks">Зерновозы</a></li>-->
+                    <!--<li><a href="/timeslots.html" class="p_timeslots">Таймслоты</a></li>-->
+                    <!--<li><a href="" class="p_services">Сервисы</a></li>-->
+                    <!--<li><a href="" class="p_forum">Форум</a></li>-->
+                <!--</ul>-->
+                <!--<form class="navbar-form navbar-right">-->
+                    <!--<input type="text" class="form-control" placeholder="Search...">-->
+                <!--</form>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="c-sidebar zv-flex-col justify-side-by-side">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <div class="c-sidebar__header">
+                    <div class="c-logo">
+                        <a href="/" class="c-logo__brand"><span class="blue-text">Zerno</span>vozam</a>
+                        <span class="c-logo__text">Сервис №1 в России для заказчиков и перевозчиков зерна</span>
+                    </div>
+
+                    <a href="#enterPhone" class="c-login" data-toggle="modal">Войти</a>
+
+                    <div class="c-user c-hidden"><!-- user-block -->
+                        <div class="c-user__header collapsed" data-toggle="collapse" data-target="#toggleUserInfo"><!--accordion_header-->
+                            <div class="title">Иванов Сергей</div>
+                        </div>
+                        <div id="toggleUserInfo" class="c-user__body collapse">
+                            <a href="">Что-то</a>
+                            <a href="">Еще немного</a>
+                            <a href="">И еще</a>
+                        </div>
+                        <a href="" class="c-user__rating c-rating" data-rating="3"><!-- rating_user -->
+                            <img alt="1" src="img/Star_Y_Copy_24.svg" title="">
+                            <img alt="2" src="img/Star_Y_Copy_24.svg" title="">
+                            <img alt="3" src="img/Star_Y_Copy_24.svg" title="">
+                            <img alt="4" src="img/Star_G_Copy_7.svg" title="">
+                            <img alt="5" src="img/Star_G_Copy_7.svg" title="">
+                        </a>
+                    </div>
+                    <ul class="c-main-menu"><!--nav nav-sidebar-->
+                        <li class="c-main-menu__item c-main-menu__item--active zv-flex-row align-side-by-side">
+                            <a href="/" class="c-main-menu__main zv-flex-row nowrap"><span class="zv-icon-menu-home"></span>Главная</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="orders.html" class="c-main-menu__orders zv-flex-row nowrap"><span class="zv-icon-menu-orders"></span>Заявки</a>
+                            <a href="add_order.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="grain_trucks.html" class="c-main-menu__trucks zv-flex-row nowrap"><span class="zv-icon-menu-trucks"></span>Зерновозы</a>
+                            <a href="/" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="timeslots.html" class="c-main-menu__timeslots zv-flex-row nowrap"><span class="zv-icon-menu-timeslots"></span>Таймслоты</a>
+                            <a href="add_timeslot.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__services zv-flex-row nowrap"><span class="zv-icon-menu-serves"></span>Сервисы</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-forum"></span> Форум</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="search_truck.html" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-search"></span> Поиск АТП и Авто</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="c-sidebar__footer">
+                    <div class="c-sidebar__support">
+                        <h5 class="technical_support_title">Техподдержка</h5>
+                        <a href="tel:+79628604827" class="technical_support_phone">+7 (962) 860-48-27</a>
+                    </div>
+                    <ul class="c-bottom-nav zv-flex-row">
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Тарифы</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Оферта</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Контакты</a></li>
+                    </ul>
+                    <div class="c-copyright"><a href="" class="c-paragraph">ООО "Шипго" © 2014-2017</a></div>
+                </div>
+            </div>
+            <div class="col-sm-12 main">
+                <section class="c-first-screen">
+                    <div id="map" class="c-first-screen__map"></div>
+                    <a href="" class="c-button c-button--blue c-button--add">Подать Заявку на Перевозку</a>
+                    <div class="c-first-screen__panel">
+
+                        <!--
+                        <h2 class="c-caption__h1--large">Работа для Зерновозов на Юге России</h2>
+                        <h2 class="c-caption__h1">Заявки</h2>
+                        <h2 class="c-caption__h2">Срочно нужны зерновозы? Не вопрос!</h2>
+                        <h2 class="c-caption__h3">Заполните заявку и принимайте предложения по телефону</h2>
+                        <h2 class="c-caption__h4">Удобный поиск работы для зерновозов</h2>
+                        <h2 class="c-caption__h5">Александр Павлов</h2>
+
+                        <span class="c-paragraph c-paragraph--middle c-paragraph--extra">4,568</span><span class="c-paragraph c-paragraph--middle"> клиентов ищут зерновозы прямо сейчас</span><br>
+                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span><br>
+                        <span class="c-paragraph c-paragraph--middle">Создайте заявку и ждите звонков, либо обзванивайте перевозчиков самостоятельно</span><br>
+                        <span class="c-paragraph c-paragraph--lightgray">А чтобы прекратить поток звонков, достаточно будет просто закрыть заявку</span><br>
+                        <span class="c-paragraph">Как установить на Android?</span><br>
+
+                        <span class="c-paragraph c-paragraph--large">
+                            Сайт zernovozam.ru позволяет оперативно известить потенциальных автоперевозчиков о маршрутах перевозки грузов и найти вариант оптимальной цены
+                        </span><br>
+                        <span class="c-paragraph c-paragraph--light">Cтарший специалист отдела логистики, Cargill</span><br>
+                        <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Найти работу для зерновоза</span><br>
+                        <br>
+                         -->
+                        <h2 class="c-first-screen__title c-caption__h1--large">Работа для Зерновозов на Юге России</h2>
+                        <div class="c-first-screen__online">
+                            <span class="zv-icon-clients"></span>
+                            <span class="c-paragraph c-paragraph--middle c-paragraph--extra">4,568</span>
+                            <span class="c-paragraph c-paragraph--middle"> клиентов ищут зерновозы прямо сейчас</span>
+                        </div>
+                        <div class="c-district-selection">
+                            <form id="district_selection_form" action="" method="">
+                                <div class="c-district-selection__header">
+                                    <h2 class="c-district-selection__title c-caption__h4 c-caption__h4--large c-caption--darkblue">Выберите район погрузки</h2>
+                                    <input type="text" id="quick_search" name="quick_search" placeholder="Район, город, населенный пункт" class="search form-control" title="Район,город,населенный пункт" value="">
+                                </div>
+                                <div class="c-district-selection__body" style="height: 351px;">
+                                    <div class="scrollbar-macosx" style="max-height: 100%;">
+                                        <div class="permanent">
+                                            <ul class="c-districts"><!--list_district_selection_form-->
+                                                <li class="c-districts__item zv-flex-row nowrap align-side-by-side">
+                                                    <div class="c-districts__text zv-flex-col">
+                                                        <div class="c-paragraph c-paragraph--middle c-paragraph--darkblue c-paragraph--bold">Тихорецкий район</div>
+                                                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span>
+                                                    </div>
+                                                    <div class="c-districts__orders">1855</div>
+                                                </li>
+                                                <li class="c-districts__item zv-flex-row nowrap align-side-by-side">
+                                                    <div class="c-districts__text zv-flex-col">
+                                                        <div class="c-paragraph c-paragraph--middle c-paragraph--darkblue c-paragraph--bold">Тихорецкий район</div>
+                                                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span>
+                                                    </div>
+                                                    <div class="c-districts__orders">118</div>
+                                                </li>
+                                                <li class="c-districts__item zv-flex-row nowrap align-side-by-side">
+                                                    <div class="c-districts__text zv-flex-col">
+                                                        <div class="c-paragraph c-paragraph--middle c-paragraph--darkblue c-paragraph--bold">Тихорецкий район</div>
+                                                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span>
+                                                    </div>
+                                                    <div class="c-districts__orders">450</div>
+                                                </li>
+                                                <li class="c-districts__item zv-flex-row nowrap align-side-by-side">
+                                                    <div class="c-districts__text zv-flex-col">
+                                                        <div class="c-paragraph c-paragraph--middle c-paragraph--darkblue c-paragraph--bold">Тихорецкий район</div>
+                                                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span>
+                                                    </div>
+                                                    <div class="c-districts__orders">105</div>
+                                                </li>
+                                                <li class="c-districts__item zv-flex-row nowrap align-side-by-side">
+                                                    <div class="c-districts__text zv-flex-col">
+                                                        <div class="c-paragraph c-paragraph--middle c-paragraph--darkblue c-paragraph--bold">Тихорецкий район</div>
+                                                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span>
+                                                    </div>
+                                                    <div class="c-districts__orders">20</div>
+                                                </li>
+                                                <li class="c-districts__item zv-flex-row nowrap align-side-by-side">
+                                                    <div class="c-districts__text zv-flex-col">
+                                                        <div class="c-paragraph c-paragraph--middle c-paragraph--darkblue c-paragraph--bold">Тихорецкий район</div>
+                                                        <span class="c-paragraph c-paragraph--small">Краснодарский край</span>
+                                                    </div>
+                                                    <div class="c-districts__orders">386</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <section class="c-no-problem zv-flex-row">
+                    <div class="c-no-problem__wrap480 zv-flex-row nowrap align-side-by-side vertical-align">
+                        <div class="no_problem_1">
+                            <h2 class="c-no-problem__title c-caption__h2">Срочно нужны зерновозы? Не вопрос!</h2>
+                            <span class="c-paragraph c-paragraph--middle">Создайте заявку и ждите звонков, </br>либо обзванивайте перевозчиков самостоятельно</span>
+                        </div>
+                        <div class="no_problem_2">
+
+                        </div>
+                    </div>
+                    <div class="c-no-problem__wrap1980">
+                        <div class="c-no-problem__wrap-item zv-flex-row align-side-by-side vertical-align">
+                            <div class="no_problem_3">
+                                <img src="img/placeholder.png" width="494" height="400" alt="" class="placeholder_img">
+                            </div>
+                            <div class="no_problem_4">
+                                <h3 class="c-no-problem__subtitle c-caption__h3">Заполните заявку и принимайте предложения по телефону</h3>
+                                <span class="c-paragraph c-paragraph--middle">
+                                    Заполните простую форму через этот сайт или приложение и вам сразу начнут поступать предложения от перевозчиков
+                                </span>
+                                <div class="c-no-problem__wrap-btn">
+                                    <a href="" class="c-button c-button--blue c-button--icon">
+                                        <span class="zv-icon-plus-circle" ></span>
+                                        <span>Создать заявку</span>
+                                    </a>
+                                    <div class="c-paragraph c-paragraph--lightgray">А чтобы прекратить поток звонков, достаточно будет просто закрыть заявку</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-no-problem__wrap-item zv-flex-row align-side-by-side vertical-align">
+                            <div class="no_problem_5">
+                                <h3 class="c-no-problem__subtitle c-caption__h3">Заполните заявку и принимайте предложения по телефону</h3>
+                                <span class="c-paragraph c-paragraph--middle">
+                                    642 перевозчика готовы принимать заказы по телефону. Просто выберите регион погрузки и мы покажем все телефоны зерновозов, которые
+                                    базируются неподалеку
+                                </span>
+                                <div class="c-no-problem__wrap-btn">
+                                    <a href="" class="c-button c-button--blue c-button--icon"><span class="zv-icon-show-truck"></span>Показать 642 зерновоза</a>
+                                    <div class="c-paragraph c-paragraph--lightgray">
+                                        Предупреждаем, что не все зерновозы могут быть свободны в данный момент
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="no_problem_6">
+                                <img src="img/placeholder.png" width="494" height="400" alt="" class="placeholder_img">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="c-app">
+                    <div class="c-app__wrap767">
+                        <div class="c-app__phone"></div>
+                        <div class="c-app__text">
+                            <h2 class="c-app__title c-caption__h2">Зерновозам.ру всегда под рукой</h2>
+                            <span class="c-paragraph c-paragraph--middle">
+                                Все функции Зерновозам.ру теперь и в мобильных приложениях для Android и iOS
+                            </span>
+                        </div>
+                    </div>
+                    <div class="c-app__function">
+                        <ul class="c-functions zv-flex-col justify-side-by-side">
+                            <li class="c-functions__item zv-flex-row vertical-align nowrap">
+                                <div class="c-functions__icon c-functions__icon--distance">
+                                    <img src="img/icon_distance.svg" width="48" height="48" alt="" class="img_function">
+                                </div>
+                                <div class="c-functions__action">Удобный поиск работы для зерновозов</div>
+                            </li>
+                            <li class="c-functions__item zv-flex-row vertical-align nowrap">
+                                <div class="c-functions__icon c-functions__icon--delivery">
+                                    <img src="img/icon_delivery.svg" width="52" height="36" alt="" class="img_function">
+                                </div>
+                                <div class="c-functions__action">База всех зерновозов с телефонами</div>
+                            </li>
+                            <li class="c-functions__item zv-flex-row vertical-align nowrap">
+                                <div class="c-functions__icon c-functions__icon--shopping-list">
+                                    <img src="img/icon_shopping_list.svg" width="36" height="48" alt="" class="img_function">
+                                </div>
+                                <div class="c-functions__action">Регистрация и просмотр очереди на выгрузку в Новороссийске и Тамани</div>
+                            </li>
+                        </ul>
+                        <ul class="c-magazine zv-flex-row">
+                            <li class="c-magazine__item zv-flex-col justify-top">
+                                <div class="c-button c-button--app c-button--google-play">Доступно в</br><span>Google Play</span></div>
+                                <a href="" class=""><span class="c-paragraph">Как установить на Android?</span></a>
+                            </li>
+                            <li class="c-magazine__item zv-flex-col justify-top">
+                                <div class="c-button c-button--app c-button--app-store">Доступно в</br><span>App Store</span></div>
+                                <a href="" class=""><span class="c-paragraph">Как установить на iOS?</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="c-reviews-slider">
+                    <h2 class="c-reviews-slider__title c-caption__h2">С нами уже 27 415 перевозчиков и заказчиков</h2>
+                    <div id="reviewsCarousel" class="c-reviews-slider__carousel carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="c-reviews-slider__item item active">
+                                <span class="zv-icon-quotes"></span>
+                                <blockquote class="blockquote-reverse">
+                                    <span class="c-paragraph c-paragraph--large">
+                                        Сайт zernovozam.ru позволяет оперативно известить потенциальных автоперевозчиков о маршрутах перевозки грузов и найти вариант оптимальной цены
+                                    </span>
+                                    <footer>
+                                        <h2 class="c-caption__h5">Александр Павлов</h2>
+                                        <span class="c-paragraph c-paragraph--light c-paragraph--lightgray">Cтарший специалист отдела логистики, Cargill</span>
+                                    </footer>
+                                </blockquote>
+                            </div>
+
+                            <div class="c-reviews-slider__item item">
+                                <span class="zv-icon-quotes"></span>
+                                <blockquote class="blockquote-reverse">
+                                    <span class="c-paragraph c-paragraph--large">
+                                        Сайт zernovozam.ru позволяет оперативно известить потенциальных автоперевозчиков о маршрутах перевозки грузов и найти вариант оптимальной цены
+                                    </span>
+                                    <footer>
+                                        <h2 class="c-caption__h5">Александр Павлов</h2>
+                                        <span class="c-paragraph c-paragraph--light c-paragraph--lightgray">Cтарший специалист отдела логистики, Cargill</span>
+                                    </footer>
+                                </blockquote>
+                            </div>
+
+                            <div class="c-reviews-slider__item item">
+                                <span class="zv-icon-quotes"></span>
+                                <blockquote class="blockquote-reverse">
+                                    <span class="c-paragraph c-paragraph--large">
+                                        Сайт zernovozam.ru позволяет оперативно известить потенциальных автоперевозчиков о маршрутах перевозки грузов и найти вариант оптимальной цены
+                                    </span>
+                                    <footer>
+                                        <h2 class="c-caption__h5">Александр Павлов</h2>
+                                        <span class="c-paragraph c-paragraph--light c-paragraph--lightgray">Cтарший специалист отдела логистики, Cargill</span>
+                                    </footer>
+                                </blockquote>
+                            </div>
+                        </div>
+                        <!-- controls -->
+                        <a class="left carousel-control" href="#reviewsCarousel" data-slide="prev">
+                            <span class="left_arr"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" href="#reviewsCarousel" data-slide="next">
+                            <span class="right_arr"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                        <a href="" class="c-button c-button--add c-button--empty-blue">Посмотреть все отзывы</a>
+                    </div>
+                </section>
+                <section class="c-our-clients">
+                    <h2 class="c-our-clients__title c-caption__h2">Среди наших клиентов</h2>
+                    <div class="c-clients zv-flex-row vertical-align">
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_1.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_2.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_3.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_4.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_2.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_4.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_1.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                        <div class="c-clients__item">
+                            <a href="" class=""><img src="img/our_client_logo_3.svg" width="" height="" alt="" class="clients_item_logo"></a>
+                        </div>
+                    </div>
+                </section>
+                <section class="c-start-now">
+                    <h2 class="c-start-now__title">Начните прямо сейчас!</h2>
+                    <ul class="c-actions zv-flex-row vertical-align">
+                        <li class="c-actions__item act1">
+                            <a href="" class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Найти работу для зерновоза</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act2">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Создать заявку на перевозку зерна</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act3">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Посмотреть список зерновозов с контактами</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act4">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Получить таймслот для выгрузки на НЗТ и НКХП</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act5">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Проверить очереди на стивидорах</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act6">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Пробить гос. номера по базам стивидоров</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act7">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Посмотреть статистику расценок на перевозку</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act8">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Узнать квоты на выдачу таймслотов</span>
+                            </a>
+                        </li>
+                        <li class="c-actions__item act9">
+                            <a href=""  class="c-actions__go">
+                                <span class="c-paragraph c-paragraph--middle c-paragraph--bold">Перейти на форум с новостями и обсуждениями</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Введите телефон -->
+    <div id="enterPhone" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="enterPhone_form" autocomplete="" enctype="multipart/form-data">
+                    <!--<button type="button" class="close closeModal" id="" data-dismiss="modal" aria-hidden="true">×</button>-->
+                    <div class="modal-body zv-flex-col">
+
+                        <label for="phone" class="c-form__label c-caption__h4--large c-caption--darkblue">Введите телефон</label>
+                        <div class="c-form__group zv-flex-row nowrap vaertical-align">
+                            <div class="c-form__wrap">
+                                <input type="text" id="phone" name="phone" class="c-form__field" title="Номер Вашего телефона в формате +79999999999" value="" required="" placeholder="" tabindex="1" autofocus>
+                            </div>
+                            <button type="submit" id="enterPhone_submit" class="c-button c-button--blue" tabindex="2">Продолжить</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Введите код из SMS, чтобы зарегистрироваться / Введите код из SMS, чтобы восстановить пароль -->
+    <div id="enterCode" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="enterCode_form" autocomplete="" enctype="multipart/form-data">
+                    <div class="modal-body flex_col">
+                        <div class="c-form__group">
+                            <label for="code" class="c-form__label c-caption__h4--large c-caption--darkblue">Введите код из SMS, чтобы зарегистрироваться<!--Введите код из SMS, чтобы восстановить пароль--></label>
+                            <div class="c-form__wrap">
+                                <input type="text" id="code" name="code" class="c-form__field" title="" value="" required="" placeholder="" autofocus>
+                            </div>
+                        </div>
+                        <div class="zv-flex-row nowrap vertical-align align-side-by-side">
+                            <a href="#enterPass" class="send_again" data-toggle="modal">Выслать  SMS повторно</a>
+                            <div class="zv-flex-row nowrap vertical-align">
+                                <span class="number">+7 920 442 44 34</span>
+                                <a href="#informationYourself" class="change_number" data-toggle="modal">Сменить номер</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Укажите информацию о себе -->
+    <div id="informationYourself" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="informationYourself_form" autocomplete="" enctype="multipart/form-data">
+                    <div class="modal-body zv-flex-col">
+
+                        <div class="c-form__group">
+                            <label class="c-form__label c-caption__h4--large c-caption--darkblue">Укажите информацию о себе</label>
+                            <div class="zv-flex-row nowrap vertical-align">
+                                <div class="c-form__wrap--two my_name">
+                                    <input type="text" id="my_name" name="my_name" class="c-form__field " title="Имя" value="" required="" placeholder="Имя" tabindex="1">
+                                </div>
+                                <div class="c-form__wrap--two my_surname">
+                                    <input type="text" id="my_surname" name="my_surname" class="c-form__field" title="Фамилия" value="" required="" placeholder="Фамилия" tabindex="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zv-flex-row nowrap vertical-align">
+                            <div class="c-form__group zv-flex-row vertical-align c-radio-group c-radio-group--circle">
+                                <div class="c-radio-group__name">Роль</div>
+                                <input type="radio" id="role_btn_1" name="role" class="c-radio-group__input" value="" checked="">
+                                <label for="role_btn_1" class="c-radio-group__label" tabindex="3">Водитель</label>
+                                <input type="radio" id="role_btn_2" name="role" class="c-radio-group__input" value="">
+                                <label for="role_btn_2" class="c-radio-group__label" tabindex="4">Заказчик перевозки</label>
+                            </div>
+                            <button type="submit" id="informationYourself_submit" class="c-button c-button--blue" tabindex="5">Продолжить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Придумайте пароль / Придумайте новый пароль -->
+    <div id="createPass" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="createPass_form" autocomplete="" enctype="multipart/form-data">
+                    <div class="modal-body zv-flex-col">
+                        <label for="pass" class="c-form__label c-caption__h4--large c-caption--darkblue">Придумайте пароль<!--Придумайте новый пароль--></label>
+                        <div class="c-form__group zv-flex-row nowrap vertical-align">
+                            <div class="c-form__wrap">
+                                <input type="text" id="pass" name="pass" class="c-form__field" title="Придумайте и введите пароль" value="" required="" placeholder="" tabindex="1">
+                            </div>
+                            <button type="submit" id="createPass_submit" class="c-button c-button--blue" tabindex="2">Продолжить</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Повторите пароль / Повторите пароль -->
+    <div id="repeatPass" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="repeatPass_form" autocomplete="" enctype="multipart/form-data">
+                    <div class="modal-body zv-flex-col">
+                        <label for="repeat_pass" class="c-form__label c-caption__h4--large c-caption--darkblue">Повторите пароль</label>
+                        <div class="form-group zv-flex-row nowrap vertical-align">
+
+                            <div class="c-form__wrap">
+                                <input type="text" id="repeat_pass" name="repeat_pass" class="c-form__field" title="Повторите пароль" value="" required="" placeholder="" tabindex="1" autofocus>
+                            </div>
+                            <button type="submit" id="repeatPass_submit" class="c-button c-button--blue" tabindex="2">Продолжить<!--Готово--></button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Вы зарегистрированы / Пароль изменён -->
+    <div id="finishInfo" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <div class="modal-body flex_col">
+                    <img src="img/icon_Check.svg" width="51" height="48" alt="">
+                    <label class="c-form__label c-caption__h4--large c-caption--darkblue">Вы зарегистрированы<!--Пароль изменён--></label>
+                    <label class="text">Используйте номер +7 920 442 44 34 для входа<!--Вы вошли по новому паролю--></label>
+                    <button type="button" id="finishInfo_close" class="c-button c-button--blue closeModal" data-dismiss="modal" aria-hidden="true" tabindex="2">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Введите пароль, чтобы войти -->
+    <div id="enterPass" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="enterPass_form" autocomplete="" enctype="multipart/form-data">
+                    <div class="modal-body zv-flex-col">
+                        <div class="zv-flex-col">
+                            <label for="pass2" class="c-form__label c-caption__h4--large c-caption--darkblue">Введите пароль, чтобы войти</label>
+                            <div class="c-form__group zv-flex-row nowrap vertical-align align-side-by-side">
+
+                                <div class="c-form__wrap">
+                                    <input type="text" id="pass2" name="pass2" class="c-form__field" title="" value="" required="" placeholder="" autofocus>
+                                </div>
+                                <button type="submit" id="enterPass_submit" class="c-button c-button--blue" tabindex="2">Продолжить</button>
+
+                            </div>
+
+                        </div>
+                        <div class="c-form__line zv-flex-row nowrap vertical-align align-side-by-side">
+                            <a href="" class="not_remember_pass">Я не помню пароль</a>
+                            <div class="zv-flex-row nowrap vertical-align">
+                                <span class="number">+7 920 442 44 34</span>
+                                <a href="" class="change_number">Сменить номер</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- modal dialog Подать заявку -->
+    <div id="createOrderInfo" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="createOrderInfo-form" autocomplete="" enctype="multipart/form-data">
+                    <button type="button" class="c-close close closeModal" id="" data-dismiss="modal" aria-hidden="true">×</button>
+                    <div class="modal-body">
+                        <label for="" class="c-form__label c-caption__h3 c-caption--darkblue">Подать заявку</label>
+                        <div class="c-paragraph c-paragraph--darkblue">
+                            Чтобы оставить заявку, вам нужно зарегистрироваться или войти на электронную торговую площадку
+                            Поток.
+                        </div>
+                        <h4 class="c-caption__h3 c-caption--link">Условия участия в Потоке</h4>
+                        <div class="c-form__substrate zv-flex-row nowrap vertical-align align-side-by-side">
+                            <div class="zv-flex-row vertical-align nowrap">
+                                <a href="" id="createOrderInfo_submit" class="c-button c-button--shadow c-button--blue">Войти</a>
+                                <a href="" class="c-caption__h3 c-caption--link">Зарегистрироваться</a>
+                            </div>
+                            <a href="" class="c-potok">Поток</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- modal dialog Подать заявку -->
+    <div id="createOrder" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog modal-lg" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" class="c-form" method="post" id="createOrder-form" autocomplete="" enctype="multipart/form-data">
+                    <button type="button" class="c-close close closeModal" data-dismiss="modal" aria-hidden="true">×</button>
+                    <div class="modal-body">
+                        <label for="" class="c-form__label c-caption__h3 c-caption--darkblue">Подать заявку</label>
+                        <div class="c-form__substrate zv-flex-row nowrap vertical-align align-side-by-side">
+                            <div class="">
+                                <span class="c-caption--darkblue">Вы подаёте заявку, как клиент Потока с номером:</span>
+                                <span class="c-caption--darkblue c-caption--bold">+7 920 4** ** 35</span>
+                            </div>
+                            <a href="" class="c-potok">Поток</a>
+                        </div>
+                        <div class="c-form__fieldset">
+                            <div class="c-form_group zv-flex-row nowrap">
+                                <div class="c-form__wrap c-pseudo" id="start-date">
+                                    <input type="text" class="c-form__field c-form__field--tr datetimepicker2 c-caption__h4--large c-caption--darkblue" placeholder="" value="">
+                                </div>
+                                <div class="c-form__wrap c-pseudo" id="finish-date">
+                                    <input type="text" class="c-form__field c-form__field--tr datetimepicker2 c-caption__h4--large c-caption--darkblue" placeholder="" value="">
+                                </div>
+                            </div>
+                            <div class="c-form_group zv-flex-row nowrap">
+                                <div class="c-form__wrap c-pseudo" id="distance">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="1 332 км">
+                                </div>
+                                <div class="c-form__wrap c-pseudo" id="rate">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="1,23 ₽/кг">
+                                </div>
+                            </div>
+                            <div class="c-form_group zv-flex-row nowrap">
+                                <div class="c-form__wrap c-pseudo" id="projected-weight">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="3 200 кг">
+                                </div>
+                                <div class="c-form__wrap c-pseudo" id="approximately">
+                                    <input type="text" class="c-form__field c-form__field--tr c-caption__h4--large c-caption--darkblue" placeholder="" value="189 335,32 ₽">
+                                </div>
+                            </div>
+                        </div>
+    
+                        <h4 class="c-caption__h4 c-caption__h4--large">Заявка</h4>
+                        <label for="date" class="c-form__label c-paragraph c-caption--gray">Дата</label>
+                        <div class="c-form__wrap one-of-two">
+                            <input type="text" id="date" name="date" class="c-form__field datetimepicker2" title="" value="" required="" placeholder="Выберите дату" autofocus>
+                        </div>
+                        <div class="c-quick-links zv-flex-row vertical-align">
+                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Сегодня</span></a>
+                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">Завтра</span></a>
+                        </div>
+                        <label for="role_btn_1" class="c-form__label c-paragraph c-caption--gray">Время</label>
+                        <div class="c-form__group zv-flex-col align-left c-radio-group c-radio-group--circle">
+                            <input type="radio" id="role_btn_1" name="role" class="c-radio-group__input" value="" checked="">
+                            <label for="role_btn_1" class="c-radio-group__label" tabindex="3">8:00—12:00</label>
+                            <input type="radio" id="role_btn_2" name="role" class="c-radio-group__input" value="">
+                            <label for="role_btn_2" class="c-radio-group__label" tabindex="4">12:00—14:00</label>
+                            <input type="radio" id="role_btn_3" name="role" class="c-radio-group__input" value="">
+                            <label for="role_btn_3" class="c-radio-group__label" tabindex="3">14:00—16:00</label>
+                            <input type="radio" id="role_btn_4" name="role" class="c-radio-group__input" value="">
+                            <label for="role_btn_4" class="c-radio-group__label" tabindex="4">16:00—18:00</label>
+                        </div>
+                        <div class="c-form__group select-group">
+                            <div class="zv-flex-row nowrap align-side-by-side">
+                                <span class="c-form__label c-paragraph c-caption--gray">Транспорт 1</span>
+                                <a href="" class="c-paragraph--link">Удалить</a>
+                            </div>
+                            <div class=" c-form__wrap wrap_select major w100">
+                                <select name="culture" id="transport" class="form-control c-form__field culture select-custom w100" required>
+                                    <option value="">Выберите водителя</option>
+                                    <option  class="down" value="1">Любая</option>
+                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                </select>
+                            </div>
+                            <div class=" c-form__wrap wrap_select major w100">
+                                <select name="culture" id="tractor1" class="form-control c-form__field culture select-custom w100" required>
+                                    <option value="">Выберите тягач</option>
+                                    <option  class="down" value="1">Любая</option>
+                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                </select>
+                            </div>
+                            <div class=" c-form__wrap wrap_select major w100">
+                                <select name="culture" id="tractor2" class="form-control c-form__field culture select-custom w100" required>
+                                    <option value="">Выберите тягач</option>
+                                    <option  class="down" value="1">Любая</option>
+                                    <option class="up" value="2">пшеница, 3кл.</option>
+                                    <option class="down" value="3">пшеница, 4кл.</option>
+                                    <option class="up" value="4">пшеница, 5кл.</option>
+                                </select>
+                            </div>
+                            <a href="" class="c-button c-button--w100 c-button--empty-b add_exporter"><span class="zv-icon-add-export"></span><span class="title">Добавить транспорт</span></a>
+                        </div>
+                        <div class="zv-flex-row nowrap vertical-align">
+                            <button type="submit" id="createOrder_submit" class="c-button c-button--blue c-button--shadow">Подать заявку</button>
+                            <div class="c-paragraph c-paragraph--contrasting c-paragraph--lightgray">
+                                После подачи, заявка будет доступна <a href="" class="c-link c-link--gray">в приложении Поток</a>. Ответ на заявку придёт туда же.
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- modal dialog Заявка подана -->
+    <div id="finishCreating" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <div class="modal-body zv-flex-col align-middle">
+                    <img src="img/icon_Check.svg" width="51" height="48" alt="">
+                    <label class="c-form__label c-caption__h3 c-caption--darkblue">Заявка подана</label>
+                    <label class="c-paragraph">Посмотреть заявку можно <a href="" class="c-link c-link--gray">в приложении Поток</a>. <br>Ответ на заявку придёт туда же.</label>
+                    <button type="button" id="finishInfo_close" class="c-button c-button--blue c-button--shadow closeModal" data-dismiss="modal" aria-hidden="true" tabindex="2">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal dialog Добавить свой зерновоз -->
+    <div id="addGrainTruck" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+        <div class="modal-dialog" style="z-index: 10;">
+            <div class="modal-content">
+                <form action="" method="post" id="createOrder-form" autocomplete="" enctype="multipart/form-data">
+                    <!--<button type="button" class="close closeModal" id="" data-dismiss="modal" aria-hidden="true">×</button>-->
+                    <div class="modal-body">
+                        <div class="zv-flex-col">
+                            <fieldset class="c-form__fieldset">
+                                <legend class="c-form__legend"><span class="c-caption__h3">Добавление нового зерновоза</span></legend>
+                                <div class="zv-flex-row align-side-by-side">
+                                    <div class="c-form__group one-of-two">
+                                        <label for="num_auto" class="c-form__label--mod">Номер авто</label>
+                                        <div class="wrapper_input c-form__wrap">
+                                            <input type="text" id="num_auto" name="num_auto" class="form-control c-form__field" title="Номер авто" value="" required="" placeholder="А123АА23">
+                                        </div>
+                                        <div class="c-quick-links zv-flex-row vertical-align c-hidden">
+                                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">П8692ЦП78</span></a>
+                                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">А486ВА93</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="c-form__group one-of-two">
+                                        <label for="num_truck" class="c-form__label--mod">Номер прицепа</label>
+                                        <div class="c-form__wrap">
+                                            <input type="text" id="num_truck" name="num_truck" class="form-control c-form__field" title="Номер прицепа" value="" required="" placeholder="АА23">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="zv-flex-col">
+                                    <div class="c-form__group">
+                                        <label for="inn"  class="c-form__label--mod">ИНН собственника</label>
+                                        <input type="text" class="form-control c-form__field" id="inn" name="inn" title="ИНН (10/12 цифр)" placeholder="0123456789" required>
+                                        <div class="c-quick-links zv-flex-row vertical-align c-hidden">
+                                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">2315556678</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="c-form__group">
+                                        <label for="name"  class="c-form__label--mod">Наименование собственника</label>
+                                        <input type="text" class="form-control c-form__field" id="name" name="name" title="Наименование" placeholder="ООО Аргос" required>
+                                        <div class="c-quick-links zv-flex-row vertical-align c-hidden">
+                                            <a href="" class="c-quick-links__item"><span class="c-paragraph--middle c-paragraph--link">ООО Аргос</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="c-form__group">
+                                        <label for="docs"  class="c-form__label--mod">Выберите файлы документов</label>
+                                        <div class="c-form__label--mod c-paragraph--contrasting c-paragraph--lightgray">
+                                            Необходимо загрузить сканы СТС и документа, подтверждающего право собственности на автомобиль
+                                        </div>
+                                        <div class="c-file">
+                                            <label for="docs" class="c-file__pseudoinput">Выберите файлы</label>
+                                            <input type="file" class="form-control c-file__input" id="docs" name="docs" multiple="multiple" accept="image/*,image/jpeg" required>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="c-button c-button--blue c-button--shadow">Добавить</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<script src="js/lib/bootstrap.min.js"></script>
+<script src="js/lib/jquery.mousewheel.min.js"></script>
+<script src="js/lib/jquery.formstyler.js"></script>
+<script src="js/lib/jquery.scrollbar.js"></script>
+<script src="js/scroll_custom.js"></script>
+<script src="js/search_page.js"></script>
+<script src="js/lib/jquery.inputmask.bundle.js"></script>
+<script src="js/mask_input.js"></script>
+<script src="js/lib/passfield.js"></script>
+<script src="js/lib/locales.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+        $(document).ready(function() {
+            $(function () {
+
+                // Input type="file"
+                $('.c-file__input').change(function() {
+                    if ($(this).val() != '') $(this).prev().text('Выбрано файлов: ' + $(this)[0].files.length);
+                    else $(this).prev().text('Выберите файлы');
+                });
+
+                // focus on first input
+                $('.modal').on('shown.bs.modal', function () {
+                    $(this).find('input').first().focus();
+                });
+
+                //
+                $('#informationYourself').on('show.bs.modal', function () {
+                    $('#enterCode').modal('hide');
+                });
+
+                //
+                $(document).on('click', '#enterPhone_submit', function(event) {
+                    event.preventDefault();
+                    $(this).closest('.modal').modal('hide');
+                    $('.modal#enterCode').modal('show');
+                });
+
+                //
+                $(document).on('click', '#informationYourself_submit', function(event) {
+                    event.preventDefault();
+                    $(this).closest('.modal').modal('hide');
+                    $('.modal#createPass').modal('show');
+                });
+
+                //
+                $("#pass, #repeat_pass, #pass2").passField({
+                    allowEmpty: false,
+                    showGenerate: false,
+                    showWarn: false,
+                    showTip: false
+                });
+
+                //
+                $(document).on('click', '#createPass_submit', function(event) {
+                    event.preventDefault();
+                    $(this).closest('.modal').modal('hide');
+                    $('.modal#repeatPass').modal('show');
+                });
+
+                //
+                $(document).on('click', '#repeatPass_submit', function(event) {
+                    event.preventDefault();
+                    $(this).closest('.modal').modal('hide');
+                    $('.modal#finishInfo').modal('show');
+                });
+
+                //
+                $(document).on('click', '#enterCode .send_again', function(event) {
+                    event.preventDefault();
+                    $(this).closest('.modal').modal('hide');
+                    $('.modal#enterPass').modal('show');
+                });
+
+//                //plaseholder input
+//                $('form').on('load keypress change', 'input.form-control, select.form-control, textarea.form-control', function() {
+//                    $(this).parent().addClass('totop');
+//                });
+//
+//                $('form').on('blur', 'select.form-control, textarea.form-control', function() {
+//                    if($(this).val() === '' || $(this).val() === '0') {
+//                        $(this).parent().removeClass('totop');
+//                    }
+//                });
+//
+//                $('form').on('blur', 'input.form-control', function() {
+//                    if($(this).val() === '' || $(this).val() === '0') {
+//                        $(this).parent().removeClass('totop');
+//                    }
+//                });
+//
+//                // select
+//                $("select#place-load").change(function(){
+//                    if($(this).val() == 9999) {
+//                        $(this).next().show();
+//                    } else {
+//                        return false;
+//                    }
+//                });
+//
+//                $('form').on('blur', 'select#place-load', function() {
+//                    $(this).next().hide();
+//                });
+//
+//                //tooltip
+//                $('.progress-bar-stage').mouseenter(function() {
+//                    var stage = $(this);
+//                    var str = stage[0].className.split(' ');
+//                    var result = str[0];
+//                    switch (result) {
+//                        case 'red-scale':
+//                            $(this).parent().siblings('.tooltip-orange, .tooltip-yellow').hide();
+//                            $(this).parent().siblings('.tooltip-red').show();
+//                            break;
+//                        case 'orange-scale':
+//                            $(this).parent().siblings('.tooltip-red, .tooltip-yellow').hide();
+//                            $(this).parent().siblings('.tooltip-orange').show();
+//                            break;
+//                        case 'yellow-scale':
+//                            $(this).parent().siblings('.tooltip-orange, .tooltip-red').hide();
+//                            $(this).parent().siblings('.tooltip-yellow').show();
+//                            break;
+//                    }
+//                });
+//                $('.progress-bar-stage').mouseleave(function() {
+//                    $(this).parent().siblings('.tooltip-yellow, .tooltip-orange, .tooltip-red').hide();
+//                });
+//                $(document).on('click', '.progress-bar-stage', function(event) {
+//                    $(this).mouseover();
+//                });
+//
+//                // date & time
+//                $('form').on('click', '.datepicker-input', function() {
+//                    if($(this).val() !== '') {
+//                        $(this).parent().addClass('totop');
+//                    }
+//                });
+//
+//                $('.datetimepicker1').datetimepicker({
+//                    locale: 'ru',
+//                    format: 'YYYY-MM-DD HH:MM:SS',
+//                });
+//
+//                $('.datetimepicker1').on("dp.change",function (e) {
+//                    $(this).data('DateTimePicker').hide();
+//                });
+//
+//                $('.timer1').datetimepicker({
+//                    locale: 'ru',
+//                    format: 'LT'//'HH:MM'
+//                });
+//
+//                $('.timer2').datetimepicker({
+//                    locale: 'ru',
+//                    format: 'LT'//'HH:MM:SS'
+//                });
+//
+//                $('[id^="start-time-load"]').datetimepicker({
+//                    locale: 'ru',
+//                    format: 'DD.MM.YYYY HH:MM'
+//                });
+//                $('[id^="finish-time-load"]').datetimepicker({
+//                    locale: 'ru',
+//                    format: 'DD.MM.YYYY HH:MM',
+//                    useCurrent: false //Important! See issue #1075
+//                });
+//                $('[id^="start-time-load"]').on("dp.change", function (e) {
+//                    $('[id^="finish-time-load"]').data("DateTimePicker").minDate(e.date);
+//                });
+//                $('[id^="finish-time-load"]').on("dp.change", function (e) {
+//                    $('[id^="start-time-load"]').data("DateTimePicker").maxDate(e.date);
+//                });
+//            });
+//
+//            // prewiew img
+//            $('#createOrder').on('click', '.del', function(event) {
+//                $(this).parent().find('img').remove();
+//                $(this).removeClass('del').parent().removeClass('prewiew');
+//            });
+//
+//            // #price-order (бегунок)
+//            $('.number-gr input').on('input change paste', function() {
+//                $(this).val(this.value.replace(/[^0-9\-]/, ''));
+//            });
+//
+//            $('.number-gr > div').on('click', function() {
+//                var input = $(this).siblings('input'); // инпут
+//                var value = parseInt(input.val()) || 0; // получаем value инпута или 0
+//                if ($(this).hasClass('minus')) {
+//                    value = value - 1; // вычитаем из value 1
+//                }
+//                if ($(this).hasClass('plus')) {
+//                    value = value + 1; // прибавляем к value 1
+//                }
+//                input.val(value).change(); // выводим полученное value в инпут; триггер .change() - на случай, если на изменение этого инпута у вас уже объявлен еще какой-то обработчик
+//            });
+//
+//            // menu
+//            $(".stages-list").on("click","a", function (event) {
+////            event.preventDefault();
+//                var id  = $(this).attr('href'),
+//                    top = $(id).offset().top;
+//                $('html,body').animate({
+//                    scrollTop: top
+//                }, 1500);
+//            });
+//
+//            //infowindow map
+
+            });
+        });
+</script>
+<!--<script type="text/javascript">-->
+        <!--$(function(){-->
+            <!--$("#search").keyup(function(){-->
+                <!--var search = $("#search").val();-->
+                <!--$.ajax({-->
+                    <!--type: "POST",-->
+                    <!--url: "search.php",-->
+                    <!--data: {"search": search},-->
+                    <!--cache: false,-->
+                    <!--success: function(response){-->
+                        <!--$("#search-list").html(response);-->
+                    <!--}-->
+                <!--});-->
+                <!--return false;-->
+            <!--});-->
+        <!--});-->
+<!--</script>-->
+<!--<script>-->
+    <!--$(document).ready(function(){-->
+        <!--$('input[name="quick-search"]').keyup(function(){-->
+            <!--searchToPage($(this), $('.orders-list li'));-->
+        <!--});-->
+        <!--$(document).on('keyup', 'input[name="quick-search-events"]', function(){-->
+            <!--searchToPage($(this), $('#panel2 .events-history li'));-->
+        <!--});-->
+        <!--$(document).on('keyup', 'input[name="quick-search-zernovoz"]', function(){-->
+            <!--searchToPage($(this), $('#panel3 .events-history li'));-->
+        <!--});-->
+        <!--$(document).on('keyup', 'input[name="quick-search-documents"]', function(){-->
+            <!--searchToPage($(this), $('.main-box .events-date-list li'));-->
+        <!--});-->
+        <!--$(document).on('keyup', 'input[name="quick-search-message"]', function(){-->
+            <!--searchToPage($(this), $('.chat-block .messages-list li'));-->
+        <!--});-->
+
+        <!--function searchToPage(element, where) {-->
+            <!--_this = element;-->
+            <!--$.each(where, function() {-->
+                <!--if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)-->
+                    <!--$(this).hide();-->
+                <!--else-->
+                    <!--$(this).show();-->
+            <!--});-->
+        <!--}-->
+    <!--});-->
+<!--</script>-->
+<!--<script>-->
+<!--//    (function($) {-->
+<!--//        $(function() {-->
+<!--//            var _dropdown;-->
+<!--//            var settings = {autoReinitialise: true};-->
+<!--//            $('.select-custom').styler({-->
+<!--//                selectSearch: false,-->
+<!--//                selectSmartPositioning: true,-->
+<!--//                onFormStyled: function(){-->
+<!--//                    _dropdown = $('.jq-selectbox__dropdown');-->
+<!--//                    _dropdown.find('ul').wrap('<div class="scrollbar-macosx" style="max-height: 100%;"><div class="permanent"></div></div>');-->
+<!--//                },-->
+<!--//                onSelectOpened: function(){-->
+<!--//                    var _ul = $(this).find('.jq-selectbox__dropdown ul');-->
+<!--//                    var height = _ul.height();-->
+<!--//                    var _srollPane = _dropdown.find('.scrollbar-macosx');-->
+<!--//                    _srollPane.height(height);-->
+<!--//                    _ul.css('max-height', 'none');-->
+<!--//                    _srollPane.scrollbar().trigger('refresh');-->
+<!--//                }-->
+<!--//            });-->
+<!--//        });-->
+<!--//    })(jQuery);-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--$(".phone-mask").inputmask({-->
+        <!--'mask': '+79999999999',-->
+    <!--});-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--$("#authorization-create-pass, #authorization-pass").passField({-->
+        <!--allowEmpty: false,-->
+        <!--showGenerate: false,-->
+        <!--showWarn: false,-->
+        <!--showTip: false-->
+    <!--});-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--(function() {-->
+        <!--var inpElem = document.querySelector('#photo-manager'),-->
+            <!--divElem = document.querySelector('.photo-manager');-->
+            <!--labElem = inpElem.nextElementSibling;-->
+
+        <!--inpElem.addEventListener("change", function(e) {-->
+            <!--preview(this.files[0]);-->
+        <!--});-->
+
+        <!--function preview(file) {-->
+            <!--if ( file.type.match(/image.*/) ) {-->
+                <!--var reader = new FileReader(), img;-->
+
+                <!--reader.addEventListener("load", function(event) {-->
+                    <!--img = document.createElement('img');-->
+                    <!--img.src = event.target.result;-->
+
+                        <!--for(var i =0; i < divElem.children.length; i++) {-->
+                            <!--if(divElem.children[i].localName === ('img')) {-->
+                                <!--divElem.removeChild(divElem.children[i]);-->
+                        <!--}-->
+                    <!--}-->
+                    <!--divElem.insertBefore(img, inpElem);-->
+                    <!--divElem.classList.add('prewiew');-->
+                    <!--labElem.classList.toggle('del');-->
+                <!--});-->
+
+                <!--reader.readAsDataURL(file);-->
+            <!--}-->
+        <!--}-->
+    <!--})();-->
+<!--</script>-->
+<!--<script>-->
+    <!--$(document).ready(function(){-->
+        <!--$('.scrollbar-macosx').scrollbar();-->
+
+        <!--$(document).on('click', '.message', function(){-->
+            <!--$('body').find('.navbar-collapse').toggleClass('open-message-panel');-->
+            <!--$('body').find('.map-box').toggleClass('open-message-panel');-->
+        <!--});-->
+
+        <!--$(document).on('click', '.write', function(){-->
+            <!--$(this).parent().toggleClass('open-once-message-panel');-->
+            <!--$(this).toggleClass('open-once-message-panel');-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$('.datetimepicker12').datetimepicker({-->
+            <!--locale: 'ru',-->
+            <!--format: 'DD.MM.YYYY',-->
+            <!--inline: true,-->
+            <!--defaultDate: "01/13/2018",-->
+            <!--disabledDates: [-->
+                <!--"01/01/2018",-->
+                <!--"01/02/2018",-->
+                <!--"01/03/2018",-->
+                <!--"01/04/2018",-->
+                <!--"01/21/2018"-->
+            <!--],-->
+            <!--enabledDates: [-->
+                <!--"01/10/2018",-->
+                <!--"01/11/2018",-->
+                <!--"01/12/2018"-->
+            <!--]-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+
+<!--<script src="/js/map.js"></script>-->
+<!--<script async defer-->
+        <!--src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClM7t_7zZ3OkLEXFQj6Kd7k4a-MI40yqE&amp;callback=initMap">-->
+<!--</script>-->
+<!--<script>-->
+    <!--var linkOpenPanelDetailsElement = document.querySelectorAll('.orders-list .page-body-item');-->
+
+    <!--function openPanelDetail(element, panelElement) {-->
+      <!--var thisEl = element;-->
+        <!--thisEl.parentNode.classList.add('active');-->
+      <!--var panelDetailsElement = document.querySelector('.details-panel');-->
+      <!--panelDetailsElement.classList.add('open');-->
+
+      <!--var panelElement = document.querySelector('div[class$="-panel open"]');-->
+      <!--var closeDetailsPanelElement = panelElement.querySelector('.close');-->
+      <!--closeDetailsPanelElement.addEventListener('click', function() {-->
+        <!--closePanelDetail(panelElement);-->
+      <!--});-->
+    <!--}-->
+
+    <!--function closePanelDetail(panelElement) {-->
+      <!--panelElement.classList.remove('open');-->
+      <!--for(var j = 0; j < linkOpenPanelDetailsElement.length; j++) {-->
+        <!--linkOpenPanelDetailsElement[j].parentNode.classList.remove('active');-->
+      <!--}-->
+    <!--}-->
+
+    <!--for(var i = 0; i <= linkOpenPanelDetailsElement.length-1; i++) {-->
+      <!--linkOpenPanelDetailsElement[i].addEventListener('click', function (event) {-->
+        <!--event.preventDefault();-->
+        <!--var el = event.currentTarget.parentNode;-->
+        <!--var panel = document.querySelector('div[class$="-panel open"]');-->
+        <!--if(el.classList.contains('active') && panel) {-->
+            <!--return false;-->
+        <!--}else if(el.className === 'active' || el.className === '' && panel) {-->
+            <!--var panelElement = document.querySelector('div[class$="-panel open"]');-->
+            <!--var closeDetailsPanelElement = panelElement.querySelector('.close');-->
+            <!--closePanelDetail(panelElement);-->
+            <!--openPanelDetail(event.currentTarget, panelElement);-->
+        <!--} else {-->
+            <!--openPanelDetail(event.currentTarget, panelElement);-->
+        <!--}-->
+
+      <!--});-->
+    <!--}-->
+
+    <!--$(document).ready(function() {-->
+        <!--$('.details-panel').on('change', '[id^="openTime"]', function() {-->
+            <!--if($(this).prop("checked")) {-->
+                <!--$(this).next().toggleClass('open').text('Скрыть время');-->
+            <!--} else {-->
+                <!--$(this).next().toggleClass('open').text('Показать 4 времени');-->
+            <!--}-->
+            <!--$(this).siblings('.hz').toggleClass('hide').parent().toggleClass('no-after');-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+</body>
+</html>

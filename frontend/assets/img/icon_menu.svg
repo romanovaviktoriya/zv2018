@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="02_Request-list-480х800" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-426.000000, -31.000000)">
+        <g id="logo" transform="translate(30.000000, 24.000000)" fill="#6D7996">
+            <path d="M397,7 L419,7 C419.552285,7 420,7.44771525 420,8 C420,8.55228475 419.552285,9 419,9 L397,9 C396.447715,9 396,8.55228475 396,8 C396,7.44771525 396.447715,7 397,7 Z M397,23 L419,23 C419.552285,23 420,23.4477153 420,24 C420,24.5522847 419.552285,25 419,25 L397,25 C396.447715,25 396,24.5522847 396,24 C396,23.4477153 396.447715,23 397,23 Z M397,15 L419,15 C419.552285,15 420,15.4477153 420,16 C420,16.5522847 419.552285,17 419,17 L397,17 C396.447715,17 396,16.5522847 396,16 C396,15.4477153 396.447715,15 397,15 Z" id="icon-menu"></path>
+        </g>
+    </g>
+</svg>

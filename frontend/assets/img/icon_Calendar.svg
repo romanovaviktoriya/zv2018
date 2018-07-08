@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="18px" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>icon Calendar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="09_Timeslots" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-756.000000, -631.000000)">
+        <g id="Filters" transform="translate(368.000000, 625.000000)" fill="#289CF9" fill-rule="nonzero">
+            <path d="M402,12 L402,10 L390,10 L390,12 L402,12 Z M402,14 L390,14 L390,22 L402,22 L402,14 Z M401,8 L402,8 C403.104569,8 404,8.8954305 404,10 L404,22 C404,23.1045695 403.104569,24 402,24 L390,24 C388.895431,24 388,23.1045695 388,22 L388,10 C388,8.8954305 388.895431,8 390,8 L391,8 L391,7 C391,6.44771525 391.447715,6 392,6 C392.552285,6 393,6.44771525 393,7 L393,8 L399,8 L399,7 C399,6.44771525 399.447715,6 400,6 C400.552285,6 401,6.44771525 401,7 L401,8 Z" id="icon-Calendar"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,1321 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Таймслоты</title>
+
+    <!-- favicon
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#1f2740">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1f2740">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#1f2740"> -->
+
+    <link rel="stylesheet" href="/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/lib.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <script src="/js/lib/jquery-1.12.4.min.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <a class="navbar-brand c-logo__brand" href="#"><span class="blue-text">Zerno</span>vozam</a>
+            </div>
+            <!--<div class="navbar-collapse collapse">-->
+                <!--<ul class="nav navbar-nav navbar-right">-->
+                    <!--<li><a href="/index.html" class="p_main">Главная</a></li>-->
+                    <!--<li><a href="/orders.html" class="p_orders">Заявки</a></li>-->
+                    <!--<li><a href="/grain_trucks.html" class="p_trucks">Зерновозы</a></li>-->
+                    <!--<li class="active"><a href="/" class="p_timeslots">Таймслоты</a></li>-->
+                    <!--<li><a href="" class="p_services">Сервисы</a></li>-->
+                    <!--<li><a href="" class="p_forum">Форум</a></li>-->
+                <!--</ul>-->
+                <!--<form class="navbar-form navbar-right">-->
+                    <!--<input type="text" class="form-control" placeholder="Search...">-->
+                <!--</form>-->
+            <!--</div>-->
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="c-sidebar zv-flex-col justify-side-by-side">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".c-sidebar"></button>
+                <div class="c-sidebar__header">
+                    <div class="c-logo">
+                        <a href="/" class="c-logo__brand"><span class="blue-text">Zerno</span>vozam</a>
+                        <span class="c-logo__text">Сервис №1 в России для заказчиков и перевозчиков зерна</span>
+                    </div>
+
+                    <a href="#createOrderInfo" class="c-login" data-toggle="modal">Войти</a>
+
+                    <div class="c-user c-hidden"><!-- user-block -->
+                        <div class="c-user__header collapsed" data-toggle="collapse" data-target="#toggleUserInfo"><!--accordion_header-->
+                            <div class="title">Иванов Сергей</div>
+                        </div>
+                        <div id="toggleUserInfo" class="c-user__body collapse">
+                            <a href="">Что-то</a>
+                            <a href="">Еще немного</a>
+                            <a href="">И еще</a>
+                        </div>
+                        <a href="" class="c-user__rating c-rating" data-rating="3"><!-- rating_user -->
+                            <img alt="1" src="/img/Star_Y_Copy_24.svg" title="">
+                            <img alt="2" src="/img/Star_Y_Copy_24.svg" title="">
+                            <img alt="3" src="/img/Star_Y_Copy_24.svg" title="">
+                            <img alt="4" src="/img/Star_G_Copy_7.svg" title="">
+                            <img alt="5" src="/img/Star_G_Copy_7.svg" title="">
+                        </a>
+                    </div>
+                    <ul class="c-main-menu"><!--nav nav-sidebar-->
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/index.html" class="c-main-menu__main zv-flex-row nowrap"><span class="zv-icon-menu-home"></span>Главная</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/orders.html" class="c-main-menu__orders zv-flex-row nowrap"><span class="zv-icon-menu-orders"></span>Заявки</a>
+                            <a href="/add_order.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/grain_trucks.html" class="c-main-menu__trucks zv-flex-row nowrap"><span class="zv-icon-menu-trucks"></span>Зерновозы</a>
+                            <a href="/" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item c-main-menu__item--active zv-flex-row align-side-by-side">
+                            <a href="/" class="c-main-menu__timeslots zv-flex-row nowrap"><span class="zv-icon-menu-timeslots"></span>Таймслоты</a>
+                            <a href="/add_timeslot.html" class="c-main-menu__add-new">Добавить</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__services zv-flex-row nowrap"><span class="zv-icon-menu-serves"></span>Сервисы</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-forum"></span> Форум</a>
+                        </li>
+                        <li class="c-main-menu__item zv-flex-row align-side-by-side">
+                            <a href="/search_truck.html" class="c-main-menu__forum zv-flex-row nowrap"><span class="zv-icon-menu-search"></span> Поиск АТП и Авто</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="c-sidebar__footer">
+                    <div class="c-sidebar__support">
+                        <h5 class="technical_support_title">Техподдержка</h5>
+                        <a href="tel:+79628604827" class="technical_support_phone">+7 (962) 860-48-27</a>
+                    </div>
+                    <ul class="c-bottom-nav zv-flex-row">
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Тарифы</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Оферта</a></li>
+                        <li class="bottom-nav__item"><a href="" class="c-bottom-nav__link">Контакты</a></li>
+                    </ul>
+                    <div class="c-copyright"><a href="" class="c-paragraph">ООО "Шипго" © 2014-2017</a></div>
+                </div>
+            </div>
+            <div class="col-sm-12 main">
+                <section class="c-control-block timeslots">
+                    <div class="c-control-block__title">
+                        <h2 class="c-caption__h1">Таймслоты</h2>
+                    </div>
+                    <ul class="c-control-block__nav-tabs c-nav-tabs--section nav nav-tabs" id="tabs_orders">
+                        <li class="active"><a data-toggle="tab" href="#panel1">Информация</a></li>   <!-- panelTimeslotInfo -->
+                        <li><a data-toggle="tab" href="#panel2">Ваши таймслоты</a></li>       <!-- panelOurTimeslot -->
+                    </ul>
+                    <div class="c-control-block__content tab-content">
+                        <div id="panel1" class="tab-pane fade in active">
+                            <section class="search_orders timeslot_app zv-flex-row vertical-align">
+                                <div class="timeslot_app_section1">
+                                    <p class="text">
+                                        <b>Таймслот</b> — это очередь на выгрузку в порту. Таймслот получается на каждую машину отдельно.
+                                        Прежде, чем получить таймслот, машина должна пройти аккредитацию.
+                                    </p>
+                                    <div class="zv-flex-row nowrap vertical-align">
+                                        <a href="" class="c-button c-button--blue">Получить таймслот</a>
+                                        <a href="" class="c-button c-button--app c-button--small c-button--google-play">Доступно в<br><span>Google Play</span></a>
+                                        <p class="text">
+                                            Скачайте мобильное приложение для получения таймслотов
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="timeslot_app_section2">
+
+                                </div>
+                            </section>
+                            <section class="events">
+                                <h3 class="section_subtitle">События</h3>
+                                <ul class="events_list">
+                                    <li>
+                                        <div class="flex_row">
+                                            <time datetime="15.12.2018 12:59">12:59 15 декабря</time>
+                                            <div class="title">
+                                                НКХП выдача таймслотов приостановлена до 18:00 16.12.2017
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex_row">
+                                            <time datetime="11.12.2018 11:32">11:32 11 декабря</time>
+                                            <div class="title">
+                                                НКХП выдача таймслотов приостановлена до 18:00 16.12.2017
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </section>
+                            <div class="flex_row timeslots_statistic">
+                                <section class="free_timeslots">
+                                    <div class="wrap_title flex_row">
+                                        <h3 class="section_subtitle">Свободные таймслоты</h3>
+                                        <a href="" class="date_free_timeslots">Сегодня</a>
+                                    </div>
+                                    <ul class="stevedore_list">
+                                        <li>
+                                            <div class="flex_row">
+                                                <div class="stevedore_name">НЗТ</div>
+                                                <ul class="culture_list">
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Пшеница 5 класса</div>
+                                                            <div class="count_timeslots no_timeslot">нет таймслотов</div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Пшеница 4 класса</div>
+                                                            <div class="count_timeslots"><a href="" class="go_timeslot">359 таймслотов</a></div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Пшеница 3 класса</div>
+                                                            <div class="count_timeslots"><a href="" class="go_timeslot">21 таймслот</a></div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Кукуруза</div>
+                                                            <div class="count_timeslots no_timeslot">нет таймслотов</div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Ячмень</div>
+                                                            <div class="count_timeslots no_timeslot">нет таймслотов</div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex_row">
+                                                <div class="stevedore_name">НКХП</div>
+                                                <ul class="culture_list">
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Пшеница 5 класса</div>
+                                                            <div class="count_timeslots no_timeslot">нет таймслотов</div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Пшеница 4 класса</div>
+                                                            <div class="count_timeslots"><a href="" class="go_timeslot">359 таймслотов</a></div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Пшеница 3 класса</div>
+                                                            <div class="count_timeslots"><a href="" class="go_timeslot">21 таймслот</a></div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Кукуруза</div>
+                                                            <div class="count_timeslots no_timeslot">нет таймслотов</div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="flex_row">
+                                                            <div class="culture_name">Ячмень</div>
+                                                            <div class="count_timeslots no_timeslot">нет таймслотов</div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </section>
+                                <section class="statistic">
+                                    <h3 class="section_subtitle">Статистика</h3>
+                                    <ul class="c-control-block__nav-tabs c-nav-tabs--section nav nav-tabs">
+                                        <li><a data-toggle="tab" href="#panelStatisticNKHP">НКХП</a></li>
+                                        <li class="active"><a data-toggle="tab" href="#panelStatisticNZT">НЗТ</a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="panelStatisticNZT" class="tab-pane fade in active">
+                                            <ul class="statistic_list">
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">На терминале</div>
+                                                        <div class="cultures_list_item flex_row">
+                                                            <div class="count">1</div>
+                                                            <div class="culture">Пшеница 4-класс</div>
+                                                            <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                            <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                ?
+                                                            </a>
+                                                                <!--<div class="tooltip">-->
+                                                                    <!--<input type="checkbox" id="tooltip1" class="tooltip_toggle">-->
+                                                                    <!--<label for="tooltip1">?</label>-->
+                                                                    <!--<div class="tooltip_info">-->
+                                                                        <!--<h5 class="title">Заголовок</h5>-->
+                                                                        <!--<p class="text">-->
+                                                                            <!--Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,-->
+                                                                            <!--ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.-->
+                                                                        <!--</p>-->
+                                                                    <!--</div>-->
+                                                                <!--</div>-->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">В пути к стивидору</div>
+                                                        <div class="flex_col">
+                                                            <div class="cultures_list_item flex_row">
+                                                                <div class="count">12</div>
+                                                                <div class="culture">Пшеница 4-класс</div>
+                                                                <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                                <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                   data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                    ?
+                                                                </a>
+                                                            </div>
+                                                            <div class="cultures_list_item flex_row">
+                                                                <div class="count">5</div>
+                                                                <div class="culture">Пшеница 3-класс</div>
+                                                                <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                                <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                   data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                    ?
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">На территории стивидора</div>
+                                                        <div class="cultures_list_item flex_row">
+                                                            <div class="count">12</div>
+                                                            <div class="culture">Пшеница 4-класс</div>
+                                                            <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                            <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                ?
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">Выгружено сегодня</div>
+                                                        <div class="cultures_list_item flex_row">
+                                                            <div class="count">259</div>
+                                                            <div class="culture">Пшеница 4-класс</div>
+                                                            <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                            <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                ?
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div id="panelStatisticNKHP" class="tab-pane fade">
+                                            <ul class="statistic_list">
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">На терминале</div>
+                                                        <div class="cultures_list_item flex_row">
+                                                            <div class="count">77</div>
+                                                            <div class="culture">Пшеница 4-класс</div>
+                                                            <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                            <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                               data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                ?
+                                                            </a>
+                                                            <!--<div class="tooltip">-->
+                                                            <!--<input type="checkbox" id="tooltip1" class="tooltip_toggle">-->
+                                                            <!--<label for="tooltip1">?</label>-->
+                                                            <!--<div class="tooltip_info">-->
+                                                            <!--<h5 class="title">Заголовок</h5>-->
+                                                            <!--<p class="text">-->
+                                                            <!--Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,-->
+                                                            <!--ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.-->
+                                                            <!--</p>-->
+                                                            <!--</div>-->
+                                                            <!--</div>-->
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">В пути к стивидору</div>
+                                                        <div class="flex_col">
+                                                            <div class="cultures_list_item flex_row">
+                                                                <div class="count">11</div>
+                                                                <div class="culture">Пшеница 4-класс</div>
+                                                                <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                                <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                   data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                    ?
+                                                                </a>
+                                                            </div>
+                                                            <div class="cultures_list_item flex_row">
+                                                                <div class="count">15</div>
+                                                                <div class="culture">Пшеница 3-класс</div>
+                                                                <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                                <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                                   data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                    ?
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">На территории стивидора</div>
+                                                        <div class="cultures_list_item flex_row">
+                                                            <div class="count">8</div>
+                                                            <div class="culture">Пшеница 4-класс</div>
+                                                            <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                            <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                               data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                ?
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="flex_row">
+                                                        <div class="place">Выгружено сегодня</div>
+                                                        <div class="cultures_list_item flex_row">
+                                                            <div class="count">169</div>
+                                                            <div class="culture">Пшеница 4-класс</div>
+                                                            <time datetime="21:10 06.01.2018" class="date">21:10 06.01.2018</time>
+                                                            <a href="" class="tooltip_" data-toggle="tooltip" data-placement="top" data-trigger="click" data-html="true"
+                                                               data-title="<h5 class='title'>Заголовок</h5><p class='text'>
+                                                                Работаю с ИП Клименко СВ давно, аванс вовремя, расчет через 3 дня после сдачи накладной,
+                                                                ни каких проблем с этой фирмой не возникало. Молодцы ребята, Серёга так держать.
+                                                                </p>">
+                                                                ?
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                            <section class="c-accordion instructions">
+                                <div class="c-accordion__header collapsed section_subtitle" data-toggle="collapse" data-target="#toggleInstructions"><h3 class="c-caption__h3">Инструкции</h3></div>
+                                <div id="toggleInstructions" class="c-accordion__body collapse">
+                                    <ul class="c-instructions-list">
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Регистрация машины через мобильное приложение</span></a>
+                                        </li>
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Регистрация машины на сайте</span></a>
+                                        </li>
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Заявка на получение доступа к логистической системе ООО «Порт транзит».</span></a>
+                                        </li>
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Удаление авто из рейса ГЛОНАСС</span></a>
+                                        </li>
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Возврат с НЗТ и НКХП «пограничного качества» зерна.</span></a>
+                                        </li>
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Регистрация машины через SMS</span></a>
+                                            <div class="c-paragraph--small c-paragraph--lightgray">docx. 1,3 Мб</div>
+                                        </li>
+                                        <li class="c-instructions-list__item">
+                                            <a href="" class=""><span class="c-paragraph--small c-paragraph--link">Заявление на предоставление доступа к системе распределения квот экспортера</span></a>
+                                            <div class="c-paragraph--small c-paragraph--lightgray">docx. 1,3 Мб</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="codes_traders">
+                                <h3 class="section_subtitle">Коды трейдеров</h3>
+                                <div class="table_actual_orders table_actual_orders--codes-traders">
+                                    <div class="table_thead flex_row">
+                                        <div class="th">Код</div>
+                                        <div class="th">НЗТ</div>
+                                        <div class="th">НКХП</div>
+                                        <div class="th">Трейдер</div>
+                                    </div>
+                                    <div class="table_body flex_col">
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_1">
+                                                    <span class="code">АС</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="yes"></span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="no"></span>
+
+                                                </div>
+                                                <div class="_4 flex_row">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                    <a href="" class="count_timeslots go_timeslot">12 таймслотов</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="loader">
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+
+
+                        <div id="panel2" class="tab-pane fade">
+                            <section class="c-accordion instructions events">
+                                <div class="c-accordion__header section_subtitle" data-toggle="collapse" data-target="#toggleEvents">События</div>
+                                <div id="toggleEvents" class="c-accordion__body collapse in">
+                                    <ul class="events_list">
+                                        <li>
+                                            <div class="flex_row">
+                                                <time datetime="15.12.2018 12:59">12:59 15 декабря</time>
+                                                <div class="title">
+                                                    НКХП выдача таймслотов приостановлена до 18:00 16.12.2017
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex_row">
+                                                <time datetime="15.12.2018 12:59">14:33 14 декабря</time>
+                                                <div class="title">
+                                                    Таймслот для В 054 ВЕ 26 с 22:18, 16.12.2017 перенесен на 22:18, 17.12.2017. Причина — стивидор ограничил приём зерна
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex_row">
+                                                <time datetime="11.12.2018 11:32">11:32 11 декабря</time>
+                                                <div class="title">
+                                                    НКХП выдача таймслотов приостановлена до 18:00 16.12.2017
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="my_timeslots">
+                                <div class="my_timeslots__header zv-flex-row align-side-by-side vertical-align">
+                                    <h3 class="section_subtitle">12 таймслотов</h3>
+                                    <div class="my_timeslots__filter zv-flex-row nowrap vertical-align">
+                                        <div class="form-group zv-flex-row nowrap vertical-align">
+                                            <label for="town" class="control-label">Город</label>
+                                            <div class="wrap_select major w100">
+                                                <select name="exporter" id="town" class="form-control exporter select-custom" required>
+                                                    <option value="">Выберите</option>
+                                                    <option  class="" value="1">Ростов-на-дону</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group zv-flex-row nowrap vertical-align">
+                                            <label for="stevedores" class="control-label">Стивидор</label>
+                                            <div class="wrap_select major w100">
+                                                <select name="stevedores" id="stevedores" class="form-control select-custom" required>
+                                                    <option value="">Выберите</option>
+                                                    <option  class="" value="1">НЗТ</option>
+                                                    <option class="" value="2">НКХП</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table_actual_orders table_actual_orders--my-timeslots">
+                                    <div class="table_thead flex_row">
+                                        <div class="th group_check">
+                                            <input type="checkbox" id="all_check">
+                                            <label for="all_check"></label>
+                                        </div>
+                                        <div class="th">Номер</div>
+                                        <div class="th">Таймслот</div>
+                                        <div class="th">Стивидор</div>
+                                        <div class="th">Экспортёр</div>
+                                        <div class="th">Культура</div>
+                                        <div class="th"></div>
+                                    </div>
+                                    <div class="table_body flex_col">
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item1" checked>
+                                                    <label for="check_item1"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item2" checked>
+                                                    <label for="check_item2"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item3">
+                                                    <label for="check_item3"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item4">
+                                                    <label for="check_item4"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item5">
+                                                    <label for="check_item5"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item6" checked>
+                                                    <label for="check_item6"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item7" checked>
+                                                    <label for="check_item7"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item8">
+                                                    <label for="check_item8"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item9">
+                                                    <label for="check_item9"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">В 446 КЕ 126</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">4-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="table_row flex_row">
+                                            <div class="flex_row">
+                                                <div class="_0 group_check">
+                                                    <input type="checkbox" id="check_item10" checked>
+                                                    <label for="check_item10"></label>
+                                                </div>
+                                                <div class="_1">
+                                                    <span class="num_auto">А 446 АЕ 123</span>
+                                                </div>
+                                                <div class="_2">
+                                                    <span class="timer">11:11 28.12.17</span>
+                                                    <span class="interval">10:11—13:11</span>
+                                                </div>
+                                                <div class="_3">
+                                                    <span class="stevedore">НКХП</span>
+                                                </div>
+                                                <div class="_4">
+                                                    <span class="trader_title">Торговый дом Астон, ООО</span>
+                                                </div>
+                                                <div class="_5">
+                                                    <span class="culture">5-й класс</span>
+                                                </div>
+                                                <div class="_6 flex_row">
+                                                    <a href="" class="edit"></a>
+                                                    <span class="no"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="/img/Rectangle_4.svg" alt="Идет загрузка..." width="36" height="36" class="loader">
+                                    </div>
+                                </div>
+                                <div class="c-group-footer">
+                                    <div class="zv-flex-row vertical-align align-side-by-side">
+                                        <div class="status_save zv-flex-row vertical-align"><span class="no"></span>Выбрано 5 таймслотов</div>
+                                        <div class="zv-flex-row vertical-align">
+                                            <a href="" id="remove_checked_timeslots" class="c-button c-button--empty">Удалить</a>
+                                            <a href="" id="move_checked_timeslots" class="c-button c-button--blue">Перенести</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- modal dialog Подать заявку -->
+<div id="createOrder" class="modal fade" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-lg" style="z-index: 10;">
+        <div class="modal-content">
+            <form action="" method="post" id="createOrder-form" autocomplete="" enctype="multipart/form-data">
+                <button type="button" class="close closeModal" id="" data-dismiss="modal" aria-hidden="true">×</button>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="/js/lib/bootstrap.min.js"></script>
+
+    <script src="/js/scroll_custom.js"></script>
+    <script src="/js/search_page.js"></script>
+
+    <!--  Select custom style  -->
+    <script src="/js/lib/jquery.mousewheel.min.js"></script>
+    <script src="/js/lib/jquery.formstyler.js"></script>
+    <script src="/js/lib/jquery.scrollbar.js"></script>
+    <script type="text/javascript" src="/js/select_custom_style.js"></script>
+
+    <!-- No-UI-slider (slider distance) -->
+    <script src="/js/lib/nouislider.js"></script>
+    <!--<script type="text/javascript" src="/js/slider_range.js"></script>-->
+
+    <!-- Check all -->
+    <script src="/js/check_all.js"></script>
+
+    <script src="/js/lib/jquery.inputmask.bundle.js"></script>
+
+    <script src="/js/lib/passfield.js"></script>
+    <script src="/js/lib/locales.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $(function () {
+
+            // Actual orders (list)
+            $('.table_actual_orders').on('show.bs.collapse', '.table_actual_orders_more', function() {
+                $(this).closest('.table_row').addClass('gray_bg');
+            });
+            $('.table_actual_orders').on('hide.bs.collapse', '.table_actual_orders_more', function() {
+                $(this).closest('.table_row').removeClass('gray_bg');
+            });
+
+            // Orders (search, filter)
+            $('.search_orders').on('hide.bs.collapse', '#toggleAllParams', function() {
+                //при сворачивании панели очищать поля
+                $(this).find('input').val('');
+                $(this).find('input').attr('value','');
+                $(this).find('select option').prop('selected', false);
+                $(this).find('select option').removeAttr('selected');
+                $(this).find('select option')[0].selectedIndex = -1;
+                $(this).find('select').next().find('.jq-selectbox__select-text').text('');
+            });
+
+            // Tooltips
+            $(document).on('click', '[data-toggle="tooltip"]', function(event) {
+                event.preventDefault();
+                $(this).tooltip();
+            });
+
+            // Remove row in Your timeslots
+            $(document).on('click', '.my_timeslots .table_row .no', function() {
+                $(this).closest('.table_row').remove();
+            });
+
+            // Remove checked row in Your timeslots
+            $(document).on('click', '.my_timeslots #remove_checked_timeslots', function(event) {
+                event.preventDefault();
+                $(this).closest('.group_footer').prev().find('.table_body input:checked').closest('.table_row').remove();
+            });
+
+            // Edit row in Your timeslots
+            $(document).on('click', '.my_timeslots .edit', function(event) {
+                event.preventDefault();
+                alert('Редактирование моего таймслота');
+            });
+
+            // Remove selection in Your timeslots
+            $(document).on('click', 'section.timeslots #panel2 .group_footer .no', function() {
+                $(this).closest('#panel2') .find('input[type="checkbox"]:checked').prop('checked', false);
+                $('.my_timeslots').find('.group_footer').addClass('hide');
+                alert('Выделение снято!');
+            });
+
+
+//            //plaseholder input
+//            $('form').on('load keypress change', 'input.form-control, select.form-control, textarea.form-control', function() {
+//                $(this).parent().addClass('totop');
+//            });
+//
+//            $('form').on('blur', 'select.form-control, textarea.form-control', function() {
+//                if($(this).val() === '' || $(this).val() === '0') {
+//                    $(this).parent().removeClass('totop');
+//                }
+//            });
+//
+//            $('form').on('blur', 'input.form-control', function() {
+//                if($(this).val() === '' || $(this).val() === '0') {
+//                    $(this).parent().removeClass('totop');
+//                }
+//            });
+//
+//            // select
+//            $("select#place-load").change(function(){
+//                if($(this).val() == 9999) {
+//                    $(this).next().show();
+//                } else {
+//                    return false;
+//                }
+//            });
+//
+//            $('form').on('blur', 'select#place-load', function() {
+//                $(this).next().hide();
+//            });
+//
+//            //tooltip
+//            $('.progress-bar-stage').mouseenter(function() {
+//                var stage = $(this);
+//                var str = stage[0].className.split(' ');
+//                var result = str[0];
+//                switch (result) {
+//                    case 'red-scale':
+//                        $(this).parent().siblings('.tooltip-orange, .tooltip-yellow').hide();
+//                        $(this).parent().siblings('.tooltip-red').show();
+//                        break;
+//                    case 'orange-scale':
+//                        $(this).parent().siblings('.tooltip-red, .tooltip-yellow').hide();
+//                        $(this).parent().siblings('.tooltip-orange').show();
+//                        break;
+//                    case 'yellow-scale':
+//                        $(this).parent().siblings('.tooltip-orange, .tooltip-red').hide();
+//                        $(this).parent().siblings('.tooltip-yellow').show();
+//                        break;
+//                }
+//            });
+//            $('.progress-bar-stage').mouseleave(function() {
+//                $(this).parent().siblings('.tooltip-yellow, .tooltip-orange, .tooltip-red').hide();
+//            });
+//            $(document).on('click', '.progress-bar-stage', function(event) {
+//                $(this).mouseover();
+//            });
+//
+//            // date & time
+//            $('form').on('click', '.datepicker-input', function() {
+//                if($(this).val() !== '') {
+//                    $(this).parent().addClass('totop');
+//                }
+//            });
+//
+//            $('.datetimepicker1').datetimepicker({
+//                locale: 'ru',
+//                format: 'YYYY-MM-DD HH:MM:SS',
+//            });
+//
+//            $('.datetimepicker1').on("dp.change",function (e) {
+//                $(this).data('DateTimePicker').hide();
+//            });
+//
+//            $('.timer1').datetimepicker({
+//                locale: 'ru',
+//                format: 'LT'//'HH:MM'
+//            });
+//
+//            $('.timer2').datetimepicker({
+//                locale: 'ru',
+//                format: 'LT'//'HH:MM:SS'
+//            });
+//
+//            $('[id^="start-time-load"]').datetimepicker({
+//                locale: 'ru',
+//                format: 'DD.MM.YYYY HH:MM'
+//            });
+//            $('[id^="finish-time-load"]').datetimepicker({
+//                locale: 'ru',
+//                format: 'DD.MM.YYYY HH:MM',
+//                useCurrent: false //Important! See issue #1075
+//            });
+//            $('[id^="start-time-load"]').on("dp.change", function (e) {
+//                $('[id^="finish-time-load"]').data("DateTimePicker").minDate(e.date);
+//            });
+//            $('[id^="finish-time-load"]').on("dp.change", function (e) {
+//                $('[id^="start-time-load"]').data("DateTimePicker").maxDate(e.date);
+//            });
+        });
+//
+//        // prewiew img
+//        $('#createOrder').on('click', '.del', function(event) {
+//            $(this).parent().find('img').remove();
+//            $(this).removeClass('del').parent().removeClass('prewiew');
+//        });
+//
+//        // #price-order (бегунок)
+//        $('.number-gr input').on('input change paste', function() {
+//            $(this).val(this.value.replace(/[^0-9\-]/, ''));
+//        });
+//
+//        $('.number-gr > div').on('click', function() {
+//            var input = $(this).siblings('input'); // инпут
+//            var value = parseInt(input.val()) || 0; // получаем value инпута или 0
+//            if ($(this).hasClass('minus')) {
+//                value = value - 1; // вычитаем из value 1
+//            }
+//            if ($(this).hasClass('plus')) {
+//                value = value + 1; // прибавляем к value 1
+//            }
+//            input.val(value).change(); // выводим полученное value в инпут; триггер .change() - на случай, если на изменение этого инпута у вас уже объявлен еще какой-то обработчик
+//        });
+//
+//        // menu
+//        $(".stages-list").on("click","a", function (event) {
+////            event.preventDefault();
+//            var id  = $(this).attr('href'),
+//                top = $(id).offset().top;
+//            $('html,body').animate({
+//                scrollTop: top
+//            }, 1500);
+//        });
+//
+//        //infowindow map
+
+    });
+</script>
+
+</body>
+</html>
